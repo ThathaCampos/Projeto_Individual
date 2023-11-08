@@ -2,7 +2,7 @@
 
 body {
     margin: 0;
-    background-image: url(assets/img4.webp);
+    overflow-x: hidden;
 }
 
 
@@ -43,7 +43,7 @@ body {
 }
 
 /* .navbar .container ul h1{
-
+    
 } */
 
 /* Estilizando somente o container - vai ser a estilização padrão*/
@@ -56,41 +56,21 @@ body {
 
 /* estilização do corpo da página*/
 .corpo {
-    margin-top: 100px;
-    display: flex;
-    display: flex;
+    background-image: url(../assets/img4.webp);
     background-size: cover;
-    border-radius: 50px;
-    justify-content: center;
-    align-items: center;
-    width: 85%;
-    height: 390px;
-
-}
-
-.corpo .container {
-    justify-content: left;
-    align-items: center;
-    height: 400px;
-}
-
-
-.corpo .container img {
     display: flex;
-    width: 80%;
-    height: 80%;
-    justify-content: end;
+    width: 100%;
+    height: 800px;
+
 }
 
 .corpo .container .texto {
-    margin-top: 12%;
     border: 1px solid rgb(0, 0, 0);
     border-radius: 50px;
     box-shadow: 5px 10px 20px rgb(165, 48, 140);
-    width: 60%;
+    width: 45%;
     height: 350px;
     text-align: center;
-
 }
 
 .corpo .container .texto h2 {
@@ -114,3 +94,19 @@ body {
 }
 
 /* Fim estilização do corpo */
+
+/* Inicio estilização de noticias */
+
+.noticias {
+    display: flex;
+    height: 300px;
+    justify-content: center;
+}
+
+
+.noticias .ultimas_noticias{
+    display: flex;
+    flex-direction: column;
+   
+  
+}
