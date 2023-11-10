@@ -1,6 +1,8 @@
-
-body{
+body {
     margin: 0;
+    background-image: url(../assets/img5.jpg);
+    background-size: cover;
+    
 }
 
 .navbar {
@@ -41,8 +43,11 @@ body{
 
 /* estilizando os campos */
 .campos {
+    display: flex;
+    align-items: left;
+    width: 45%;
     margin-top: 100px;
-    background-color: ;
+    overflow-y: hidden;
 }
 
 .campos .container {
@@ -52,21 +57,53 @@ body{
     justify-content: center;
 }
 
-.campos .container .box{
+.campos .container .box {
     display: flex;
-    background-image: url(../assets/img8.jpg);
-    margin-top: 5%;
+    background: linear-gradient(#528fc9,  #2571e2);
     padding-top: 2%;
-    width: 40%;
-    height: 450px;
+    width: 115%;
+    height: 650px;
     border: 2px solid black;
     flex-direction: column;
     align-items: center;
+    border-radius: 20px;
+
 }
 
 input {
-    width: 65%;
-    height: 20px;
+    width: 60%;
+    height: 22px;
     border-radius: 20px;
     border: 2px solid black;
+}
+
+.campos .container .box h1 {
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    text-shadow: #62A1FF;
+    font-weight: bold;
+}
+
+.campos .container .box span {
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.campos .container .box button {
+    margin-top: 2%;
+    width: 35%;
+    height: 40px;
+    border-radius: 20px;
+    border: 2px solid black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.box button:hover {
+    color: rgb(231, 97, 137);
+    font-weight: bold;
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all 0.6s;
 }
