@@ -72,8 +72,8 @@ body {
 }
 
 input {
-    width: 60%;
-    height: 22px;
+    width: 40%;
+    height: 18px;
     border-radius: 20px;
     border: 2px solid black;
 }
@@ -102,7 +102,7 @@ input {
 }
 
 .box button:hover {
-    color: rgb(231, 97, 137);
+    color: rgb(30, 13, 181);
     font-weight: bold;
     cursor: pointer;
 }

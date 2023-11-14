@@ -17,10 +17,10 @@
 
             <ul>
                 <li>Home</li>
-                <li>Sobre Nós</li>
-                <li>Carreira</li>
                 <li>Eras</li>
+                <li>Carreira</li>
                 <li>Quiz</li>
+                <li>Sobre</li>
                 <li>Cadastro</li>
                 <li> | </li>
                 <li>Login</li>
@@ -37,23 +37,15 @@
             <div class="box">
                 <h1>I Enchanted Mee Too!!!</h1>
 
-                <span>Username:</span>
-                <input id="user"> <br>
+                <input id="user" placeholder="Nome de Usuário"> <br>
 
-                <span>Email:</span>
-                <input id="email" type="email"> <br>
+                <input id="email" type="email" placeholder="taylor@email.com"> <br>
 
-                <span>Confirme o Email:</span>
-                <input id="confirmarEmail" type="email"> <br>
+                <input id="senha" type="password" placeholder="Dígite sua Senha"> <br>
 
-                <span>Senha:</span>
-                <input id="senha" type="password"> <br>
+                <input id="confirmarsenha" type="password" placeholder="Confirme a Senha"> <br>
 
-                <span>Confirme a Senha:</span>
-                <input id="confirmarsenha" type="password"> <br>
-
-                <span>Data de Nascimento:</span>
-                <input id="dtNasc" type="date"> <br>
+                <input id="dtNasc" type="date" placeholder="------"> <br>
 
                 <button onclick="irParaHome()">Entrar</button>
                 <h4>Já possui uma conta? <a href="../Login_Cadastro/login.html">Vá para login!</a></h4>
@@ -70,7 +62,6 @@
 
         var nomeUsuario = user.value;
         var emailUsuario = email.value;
-        var confirmeEmail = confirmarEmail.value;
         var senhaUsuario = senha.value;
         var confirmeSenha = confirmarsenha.value;
         var dtNascimentoUsuario = dtNasc.value;
@@ -79,7 +70,6 @@
         if (nomeUsuario.length > 15 &&
             emailUsuario.includes('@') == true &&
             emailUsuario.includes('.') == true &&
-            confirmeEmail == emailUsuario &&
             senhaUsuario.includes('@') == true &&
             senhaUsuario.includes('-') == true &&
             senhaUsuario.includes('#') == true &&
@@ -90,7 +80,6 @@
         } else if (nomeUsuario.length < 15 &&
             emailUsuario.includes('@') != true &&
             emailUsuario.includes('.') != true &&
-            confirmeEmail == emailUsuario &&
             senhaUsuario.includes('@') == true &&
             senhaUsuario.includes('-') == true &&
             senhaUsuario.includes('#') == true &&
@@ -101,7 +90,7 @@
         } else if (nomeUsuario.length < 15 &&
             emailUsuario.includes('@') == true &&
             emailUsuario.includes('.') == true &&
-            confirmeEmail != emailUsuario &&
+
             senhaUsuario.includes('@') == true &&
             senhaUsuario.includes('-') == true &&
             senhaUsuario.includes('#') == true &&
@@ -109,39 +98,36 @@
 
             alert('Os email são diferentes');
 
-        } else if(nomeUsuario.length < 15 &&
+        } else if (nomeUsuario.length < 15 &&
             emailUsuario.includes('@') == true &&
             emailUsuario.includes('.') == true &&
-            confirmeEmail == emailUsuario &&
             senhaUsuario.includes('@') != true &&
             senhaUsuario.includes('-') != true &&
             senhaUsuario.includes('#') != true &&
-            confirmeSenha == senhaUsuario){
+            confirmeSenha == senhaUsuario) {
 
-                alert('Senha inválda! Precisa de caracter especial')
-        
-            } else if(nomeUsuario.length < 15 &&
+            alert('Senha inválda! Precisa de caracter especial')
+
+        } else if (nomeUsuario.length < 15 &&
             emailUsuario.includes('@') != true &&
             emailUsuario.includes('.') != true &&
-            confirmeEmail === emailUsuario &&
             senhaUsuario.includes('@') == true &&
             senhaUsuario.includes('-') == true &&
             senhaUsuario.includes('#') == true &&
-            confirmeSenha === senhaUsuario){
+            confirmeSenha === senhaUsuario) {
 
-                alert('Senhas não conferem!')
-            
-            } else if(nomeUsuario.length < 15 &&
+            alert('Senhas não conferem!')
+
+        } else if (nomeUsuario.length < 15 &&
             emailUsuario.includes('@') == true &&
             emailUsuario.includes('.') == true &&
-            confirmeEmail == emailUsuario &&
             senhaUsuario.includes('@') == true &&
             senhaUsuario.includes('-') == true &&
             senhaUsuario.includes('#') == true &&
             confirmeSenha == senhaUsuario) {
 
-                window.location.href = "../Login_cadastro/login.html";
-            }
+            window.location.href = "../Login_cadastro/login.html";
+        }
 
 
     }
