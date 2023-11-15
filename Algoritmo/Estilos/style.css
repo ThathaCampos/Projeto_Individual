@@ -1,13 +1,18 @@
-@import url('https://fonts.googleapis.com/css2? family= Lora:ital@0;1 & family= Montserrat & display=swap');
+@import url('https://fonts.googleapis.com/css2? family= Lora:ital@0;1 & family= Montserrat:wght@300;400 & display=swap');
 
 body {
     margin: 0;
     overflow-x: hidden;
+    /* background-image: linear-gradient(to right top, #62a1ff, #6aa2fb, #71a4f6, #78a5f2, #7ea6ed, #76aff2, #6fb7f6, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1); */
+    /* background-image: linear-gradient(to right top, #62a1ff, #78aafb, #8bb2f8, #9cbbf4, #adc4f0, #abc3ef, #aac3ef, #a8c2ee, #93b7f0, #7badf2, #5ea3f4, #3499f6); */
+    background-image: linear-gradient(to right bottom, #104fac, #245ebb, #346dcb, #427cda, #508cea, #5e99f0, #6ca6f6, #7bb3fb, #90bff7, #a6cbf3, #bed6ef, #d6e1eb);
+    font-family: 'Montserrat', sans-serif;
+
 }
 
 
 .navbar {
-    font-family: 'Lora', serif;
+    font-family: 'Montserrat', sans-serif;
     border-bottom: 2px solid white;
     background-color: #62A1FF;
     margin: 0px 0px 3px 0px;
@@ -28,7 +33,7 @@ body {
     color: white;
     font-weight: bold;
     font-size: 20px;
-    width: 60%;
+    width: 65%;
     list-style: none;
     display: flex;
     justify-content: space-between;
@@ -36,11 +41,11 @@ body {
 }
 
 .navbar ul :hover {
-    color: rgb(30, 15, 196);
+    color: rgba(37, 108, 216, 0.719);
     cursor: pointer;
-    text-decoration: underline white;
+    text-decoration: underline;
     transform: scale(1.3);
-    transition: all 0.6s;
+    transition: all 0.3s;
 }
 
 /* .navbar .container ul h1{
@@ -57,7 +62,7 @@ body {
 
 /* estilização do corpo da página*/
 .corpo {
-    background-image: url(../assets/img4.webp);
+   
     background-size: cover;
     display: flex;
     width: 100%;
@@ -75,7 +80,6 @@ body {
 }
 
 .corpo .container .texto h2 {
-    font-family: 'Lora', serif;
     color: rgb(80, 29, 100);
     font-size: 52px;
     text-shadow: 2px 2px 5px rgba(70, 63, 63, 0.719);
@@ -85,7 +89,6 @@ body {
 }
 
 .corpo .container .texto p {
-    font-family: 'Montserrat', sans-serif;
     font-size: 28px;
     text-indent: 10px;
     letter-spacing: 1.2px;
@@ -96,56 +99,82 @@ body {
 
 /* Fim estilização do corpo */
 
-/* Inicio estilização de noticias */
+/* Inicio estilização das eras */
 
-.eras{
+.eras {
     display: flex;
-    width: 100%;
-    height: 100%;
-  
-   
-}
-
-.eras .sobreEras  {
-    display: flex;
-    width: 100%;
-    height: 150px;
-    flex-direction: column;
-    align-items: center;
-
-}
-
-.card{
-    display: flex;
-    width: 100%;
-    margin-top: 10%;
-    
-}
-
-
-/* .card .cardAlbuns{
-    
-} */
-
-
-/* .galeria {
-    display: flex;
-    margin: 5px;
-    border: 1px solid #ccc;
-   
-   
-}
-
-.galeria:hover {
-    border: 1px solid #777;
-}
-
-.galeria img {
     width: 100%;
     height: auto;
+
 }
 
-.desc {
-    padding: 15px;
-    text-align: center;
-} */
+.eras .sobreEras {
+    display: flex;
+    padding-top: 1%;
+    width: 100%;
+    height: 120px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
+    background-image: url(../assets/fundoSite.jpg);
+    background-size: cover;
+}
+
+.eras .sobreEras h2 {
+    font-size: 30px;
+    color: white;
+}
+
+.eras .sobreEras p{
+    font-size: 20px;
+    
+}
+
+.card {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+
+
+}
+
+.card .cardAlbuns {
+    display: flex;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+   
+}
+
+.card .cardAlbuns img{
+    display: flex;
+    width: 200px;
+    height: 200px;
+}
+
+.card .cardAlbuns img:hover{
+    cursor: pointer;
+    box-shadow: 5px 10px 25px  white;;
+    text-decoration: underline white;
+    transform: scale(1.4);
+    transition: all 0.6s;
+}
+
+/* Iniciiiioio da estização do quiz*/
+.quiz {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.quiz .sobreQuiz {
+    display: flex;
+    width: 90%;
+    flex-direction: column;  
+}
