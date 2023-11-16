@@ -168,8 +168,7 @@ body {
 /* Iniciiiioio da estização do quiz*/
 .quiz {
   display: flex;
-  justify-content: center;
-  align-items: center;
+align-items: center;
   flex-direction: column;
   border-top: 2px solid white;
   border-bottom: 2px solid white;
@@ -182,15 +181,6 @@ body {
 }
 
 .quiz .botao{
-    display: flex;
-    margin-left: 60%;
-    float: right;
-    
-}
-
-.quiz .organizar{
-    display: flex;
-    width: 100%;
     
 }
 
