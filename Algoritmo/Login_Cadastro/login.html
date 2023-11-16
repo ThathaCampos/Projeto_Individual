@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="../Estilos/login.css">
+    <script src="https://kit.fontawesome.com/ce9ef0d266.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- navbar -->
@@ -16,7 +17,6 @@
             <ul>
                 <li>Home</li>
                 <li>Eras</li>
-                <li>Carreira</li>
                 <li>Quiz</li>
                 <li>Sobre</li>
                 <li>Cadastro</li>
@@ -29,23 +29,32 @@
 
 
     <div class="campos">
-        <div class="container">
+        
 
             
             <div class="box">
                 <h1>WELCOME SW1FT3R</h1>
              
-                <input id="user" placeholder="Nome de Usuário"> <br>
-    
-                <input id="email" type="email" placeholder="Email"> <br>
-    
-                <input id="senha" type="password" placeholder="Dígite sua Senha"> <br>
+                <div class="login">
+                    <i class="fa-solid fa-user" style="color: #205dc5;"></i>
+                    <input id="user" placeholder="Nome de Usuário"> <br>
+                </div>
+
+                <div class="login">
+                    <i class="fa-solid fa-envelope" style="color: #205dc5;"></i>
+                    <input id="email" type="email" placeholder="taylor@email.com"> <br>
+                </div>
+
+                <div class="login">
+                    <i class="fa-solid fa-lock" style="color: #205dc5;"></i>
+                    <input id="senha" type="password" placeholder="Dígite sua Senha"> <br>
+                </div>
 
                 <button onclick="irParaHome()">Entrar</button>
                 <h4>Não possui conta? <a href="../Login_Cadastro/cadastro.html">Cadastre-se!</a></h4>
             </div>
 
-        </div>
+       
     </div>
 </body>
 </html>

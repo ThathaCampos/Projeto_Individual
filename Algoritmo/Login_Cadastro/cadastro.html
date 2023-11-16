@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Cadastro</title>
     <link rel="stylesheet" href="../Estilos/cadastro.css">
+    <script src="https://kit.fontawesome.com/ce9ef0d266.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -18,7 +19,6 @@
             <ul>
                 <li>Home</li>
                 <li>Eras</li>
-                <li>Carreira</li>
                 <li>Quiz</li>
                 <li>Sobre</li>
                 <li>Cadastro</li>
@@ -31,21 +31,36 @@
 
 
     <div class="campos">
-        <div class="container">
+        
 
-
+            
             <div class="box">
                 <h1>I Enchanted Mee Too!!!</h1>
 
-                <input id="user" placeholder="Nome de Usuário"> <br>
+                <div class="cadastro">
+                    <i class="fa-solid fa-user" style="color: #205dc5;"></i>
+                    <input id="user" placeholder="Nome de Usuário"> <br>
+                </div>
 
-                <input id="email" type="email" placeholder="taylor@email.com"> <br>
+                <div class="cadastro">
+                    <i class="fa-solid fa-envelope" style="color: #205dc5;"></i>
+                    <input id="email" type="email" placeholder="taylor@email.com"> <br>
+                </div>
 
-                <input id="senha" type="password" placeholder="Dígite sua Senha"> <br>
+                <div class="cadastro">
+                    <i class="fa-solid fa-lock" style="color: #205dc5;"></i>
+                    <input id="senha" type="password" placeholder="Dígite sua Senha"> <br>
+                </div>
 
-                <input id="confirmarsenha" type="password" placeholder="Confirme a Senha"> <br>
+                <div class="cadastro">
+                    <i class="fa-solid fa-check"  style="color: #205dc5;"></i>
+                    <input id="confirmarsenha" type="password" placeholder="Confirme sua Senha"> <br>
+                </div>
 
-                <input id="dtNasc" type="date" placeholder="------"> <br>
+                <div class="cadastro">
+                    <i class="fa-solid fa-calendar-days" style="color: #205dc5;"></i>
+                    <input id="dtNasc" type="date"> <br>
+                </div>
 
                 <button onclick="irParaHome()">Entrar</button>
                 <h4>Já possui uma conta? <a href="../Login_Cadastro/login.html">Vá para login!</a></h4>
