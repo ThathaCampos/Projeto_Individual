@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2? family= Lora:ital@0;1 & family= Montserrat:wght@300;400 & display=swap');
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+
+.navbar {
+    font-family: 'Montserrat', sans-serif;
+    border-bottom: 2px solid white;
+    background-color: #62A1FF;
+    margin: 0px 0px 3px 0px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navbar .container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .container ul {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    width: 65%;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar ul :hover {
+    color: rgba(37, 108, 216, 0.719);
+    cursor: pointer;
+    text-decoration: underline;
+    transform: scale(1.3);
+    transition: all 0.3s;
+}
+
+a {
+    color: rgb(255, 255, 255), 255;
+    text-decoration: none;
+}
+
+/* .navbar .container ul h1{
+    
+} */
+
+/* Estilizando somente o container - vai ser a estilização padrão*/
+.container {
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+
+
+/* estilização do corpo da página*/
+.corpo {
+   
+    background-size: cover;
+    display: flex;
+    width: 100%;
+    height: 800px;
+    background-image: linear-gradient(to left top, #c2d5e9, #adcbe7, #96c1e5, #7cb7e3, #5eade0, #4aa2d9, #3197d3, #008ccc, #007dbf, #006eb2, #005fa5, #015097);
+
+}
+
+.corpo .container .texto {
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 50px;
+    box-shadow: 5px 10px 20px rgb(165, 48, 140);
+    width: 45%;
+    height: 350px;
+    text-align: center;
+}
+
+.corpo .container .texto h2 {
+    color: rgb(80, 29, 100);
+    font-size: 52px;
+    text-shadow: 2px 2px 5px rgba(70, 63, 63, 0.719);
+    text-decoration-line: underline;
+    text-decoration-color: rgb(142, 68, 172);
+    text-decoration-style: wavy;
+}
+
+.corpo .container .texto p {
+    font-size: 28px;
+    text-indent: 10px;
+    letter-spacing: 1.2px;
+    line-height: 1.2;
+    text-align-last: center;
+
+}
+
+
+/* Fim estilização do corpo */
+
+/* Inicio estilização das eras */
+
+.erasTaylor {
+    background-image: linear-gradient(to right bottom, #16a0dc, #52a9df, #73b3e1, #8dbde4, #a5c7e6, #a0c0e0, #9bbadb, #96b3d5, #769ac6, #5780b7, #3668a7, #015097);
+}
+
+.erasTaylor .eras {
+    display: flex;
+    width: 100%;
+    height: auto;
+
+}
+
+.erasTaylor .eras .sobreEras {
+    display: flex;
+    padding-top: 1%;
+    width: 100%;
+    height: 120px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border-bottom: 2px solid white; */
+    border-top: 2px solid white;
+    background-size: cover;
+}
+
+.erasTaylor  .eras .sobreEras h2 {
+    font-size: 30px;
+    color: white;
+}
+
+.erasTaylor .eras .sobreEras p{
+    font-size: 20px;
+    
+}
+
+.card {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+
+
+}
+
+.card .cardAlbuns {
+    display: flex;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+   
+}
+
+.card .cardAlbuns img{
+    display: flex;
+    width: 200px;
+    height: 200px;
+}
+
+.card .cardAlbuns img:hover{
+    cursor: pointer;
+    box-shadow: 5px 10px 25px  white;;
+    text-decoration: underline white;
+    transform: scale(1.1);
+    transition: all 0.6s;
+}
+
+/* Iniciiiioio da estização do quiz*/
+.quiz {
+  display: flex;
+align-items: center;
+  flex-direction: column;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  background-image: linear-gradient(to right bottom, #015097, #3668a7, #5780b7, #769ac6, #96b3d5, #9bbadb, #a0c0e0, #a5c7e6, #8dbde4, #73b3e1, #52a9df, #16a0dc);
+}
+
+.quiz h2{
+    color: white;
+    font-size: 30px;
+}
+
+.quiz .botao{
+    
+}
+
+.quiz .sobreQuiz {
+    display: flex;
+    margin-top: 5%;
+    padding-left: 2%;
+    width: 50%;
+    flex-direction: column;  
+    margin-right: 40%;
+    border: 2px solid black;
+    float: left;
+}
+
+.sobreQuiz h3{
+    font-size: 30px;
+    color: white;
+}
+
+.sobreQuiz p{
+    font-size: 20px;
+}
+
+.quiz .sobreQuiz .regras{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    justify-content: center;
+}
+
+.regras p{
+    color: white;
+    font-size: 25px;
+}
+
+.regras ul{
+    font-weight: bold;
+    font-size: 20px;
+    list-style-type:decimal; 
+}
+

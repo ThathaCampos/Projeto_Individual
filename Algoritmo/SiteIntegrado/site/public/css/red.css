@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital@0,1&family=Montserrat&display=swap');
+
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background-image: url(../assets/fundoSite.jpg);
+    background-size: 100% 100%;
+}
+
+
+.navbar {
+    font-family: 'Lora', serif;
+    border-bottom: 2px solid white;
+    background-color: #62A1FF;
+    margin: 0px 0px 3px 0px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navbar .container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .container ul {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    width: 60%;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar ul :hover {
+    color: rgb(231, 231, 97);
+    cursor: pointer;
+    transform: scale(1.3);
+    transition: all 0.6s;
+}
+
+/* sobre as eras */
+.corpo {
+    display: flex;
+    margin-top: 100px;
+}
+
+.corpo .container {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    flex-direction: column;
+
+}
+
+.corpo .container .sobreEras {
+    display: flex;
+    width: 100%;
+    margin: 2%;
+}
+
+.sobreEras .nomeAlbum {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2%;
+    color: rgb(206, 14, 14);
+    font-family: 'Lora', serif;
+    font-size: 30px;
+}
+
+.texto1 {
+    display: flex;
+    width: 95%;
+    margin-left: 2%;
+    border: 2px solid black;
+    background-color:  rgba(206, 14, 14, 0.795);
+    border-radius: 10px;
+
+}
+
+.texto1 span {
+    margin: 2%;
+    text-align-last: center;
+    align-items: center;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.texto2 {
+    display: flex;
+    margin-top: 2%;
+    width: 95%;
+    margin-left: 2%;
+    border: 2px solid black;
+    background-color:  rgba(206, 14, 14, 0.795);
+    border-radius: 10px;
+    flex-direction: row-reverse;
+
+}
+
+.texto2 span {
+    margin: 2%;
+    text-align-last: center;
+    align-items: center;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.texto2 img {
+    width: 350px;
+    height: 300px;
+    margin: 2%;
+}
+
+#playlist {
+    width: 85%;
+    height: 400px;
+    margin-top: 5%;
+    border-radius: 10px;
+    margin-left: 7%;
+}
