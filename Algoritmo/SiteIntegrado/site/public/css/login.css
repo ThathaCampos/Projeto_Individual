@@ -126,6 +126,7 @@ a {
 .loading-div img {
     height: 50px;
     width: 50px;
+    justify-content: center;
 }
 
 #div_erros_login {
@@ -143,10 +144,11 @@ a {
     color: black;
     width: 230px;
     position: fixed;
-    border-radius: 4px;
-    border: #e6005a 3px solid;
+    border-radius: 10px;
+    border: #62A1FF 3px solid;
     padding: 10px;
-    margin-right: 10%;
+    margin-right: 5%;
+    margin-top: 8%;
 }
 
 .card_erro #mensagem_erro {

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+</head>
+
+<body>
+
+
+    <div id="quiz">
+        <div class="container">
+
+            <div class="tituloPergunta">
+                <h1>Qual é o nome completo da Taylor?</h1>
+            </div>
+
+            <button id="questao1" value="1" onclick="verificarResposta(this)">Taylor Alison Swift</button><br>
+            <button id="questao2" value="2" onclick="verificarResposta(this)">...................</button><br>
+            <button id="questao3" value="3" onclick="verificarResposta(this)">...................</button><br>
+            <button id="questao4" value="4" onclick="verificarResposta(this)">...................</button>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+
+    var pergunta1 = `<div class="container">
+
+<div class="tituloPergunta">
+    <h1>Qual é o nome completo da Taylor?</h1>
+</div>
+
+<button id="questao1" value="1" onclick="verificarResposta(this)">Taylor Alison Swift</button><br>
+<button id="questao2" value="2" onclick="verificarResposta(this)">...................</button><br>
+<button id="questao3" value="3" onclick="verificarResposta(this)">...................</button><br>
+<button id="questao4" value="4" onclick="verificarResposta(this)">...................</button>
+</div>`
+
+    var pergunta2 = ` <div class="container">
+<div class="tituloPergunta">
+    <h1>Com quantos anos ela começou a escrever músicas?</h1>
+</div>
+
+<button id="questao1" value="1" onclick="verificarResposta(this)">..............</button><br>
+<button id="questao2" value="2" onclick="verificarResposta(this)">..............</button><br>
+<button id="questao3" value="3" onclick="verificarResposta(this)">13 anos</button><br>
+<button id="questao4" value="4" onclick="verificarResposta(this)">..............</button>
+</div>`;
+
+var pergunta3 = ``;
+var pergunta4 = ``;
+var pergunta5 = ``;
+var pergunta6 = ``;
+var pergunta7 = ``;
+var pergunta8 = ``;
+var pergunta9 = ``;
+var pergunta10 = ``;
+var pergunta11 = ``;
+var pergunta12 = ``;
+var pergunta13 = ``;
+
+
+
+
+    var listaPerguntas = [pergunta1, pergunta2, pergunta3, pergunta4, pergunta5, pergunta6, pergunta7, pergunta8, pergunta9, pergunta10, pergunta11, pergunta12, pergunta13];
+
+    var questaoAtual = listaPerguntas[0];
+
+    function carregarResposta1() {
+        quiz.innerHTML = listaPerguntas[0];
+    }
+
+    window.onload = function () {
+        carregarResposta1()
+    };
+
+    function verificarResposta(botaoResposta) {
+        var valorBotao = botaoResposta.value;
+
+        if (questaoAtual == listaPerguntas[0] && valorBotao == 1) {
+            quiz.innerHTML = listaPerguntas[1];
+            questaoAtual = listaPerguntas[1];
+            // computar no banco a resposta correta.
+
+        } else if (questaoAtual == listaPerguntas[0] && valorBotao != 1) {
+            // seguir para a proxima pergunta!!!!!!!!!!!!!!!!!!
+            quiz.innerHTML = listaPerguntas[1];
+            questaoAtual = listaPerguntas[1];
+
+        } else if (questaoAtual == listaPerguntas[1] && valorBotao == 3) {
+            quiz.innerHTML = listaPerguntas[2];
+            questaoAtual = listaPerguntas[2];
+            // computar no banco a resposta correta.
+
+        } else if (questaoAtual == listaPerguntas[1] && valorBotao != 3) {
+            quiz.innerHTML = listaPerguntas[2];
+            questaoAtual = listaPerguntas[2];
+            // seguir para a proxima pergunta!!!!!!!!!!!!!!!!!!
+        }
+
+    }
+</script>
