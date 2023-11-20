@@ -9,9 +9,8 @@
 
 <body>
 
-
-    <div id="quiz">
-        <div class="container">
+    <div id="quiz" >
+        <!-- <div class="container">
 
             <div class="tituloPergunta">
                 <h1>Qual é o nome completo da Taylor?</h1>
@@ -21,7 +20,7 @@
             <button id="questao2" value="2" onclick="verificarResposta(this)">...................</button><br>
             <button id="questao3" value="3" onclick="verificarResposta(this)">...................</button><br>
             <button id="questao4" value="4" onclick="verificarResposta(this)">...................</button>
-        </div>
+        </div> -->
     </div>
 </body>
 
@@ -29,15 +28,14 @@
 <script>
 
     var pergunta1 = `<div class="container">
-
 <div class="tituloPergunta">
     <h1>Qual é o nome completo da Taylor?</h1>
 </div>
 
 <button id="questao1" value="1" onclick="verificarResposta(this)">Taylor Alison Swift</button><br>
-<button id="questao2" value="2" onclick="verificarResposta(this)">...................</button><br>
-<button id="questao3" value="3" onclick="verificarResposta(this)">...................</button><br>
-<button id="questao4" value="4" onclick="verificarResposta(this)">...................</button>
+<button id="questao2" value="2" onclick="verificarResposta(this)">Taylor Swift</button><br>
+<button id="questao3" value="3" onclick="verificarResposta(this)">Karen Alison Swift</button><br>
+<button id="questao4" value="4" onclick="verificarResposta(this)">Taylor Swift Alison</button>
 </div>`
 
     var pergunta2 = ` <div class="container">
@@ -45,23 +43,139 @@
     <h1>Com quantos anos ela começou a escrever músicas?</h1>
 </div>
 
-<button id="questao1" value="1" onclick="verificarResposta(this)">..............</button><br>
-<button id="questao2" value="2" onclick="verificarResposta(this)">..............</button><br>
+<button id="questao1" value="1" onclick="verificarResposta(this)">16 anos</button><br>
+<button id="questao2" value="2" onclick="verificarResposta(this)">14 anos</button><br>
 <button id="questao3" value="3" onclick="verificarResposta(this)">13 anos</button><br>
-<button id="questao4" value="4" onclick="verificarResposta(this)">..............</button>
+<button id="questao4" value="4" onclick="verificarResposta(this)">18 anos</button>
 </div>`;
 
-var pergunta3 = ``;
-var pergunta4 = ``;
-var pergunta5 = ``;
-var pergunta6 = ``;
-var pergunta7 = ``;
-var pergunta8 = ``;
-var pergunta9 = ``;
-var pergunta10 = ``;
-var pergunta11 = ``;
-var pergunta12 = ``;
-var pergunta13 = ``;
+    var pergunta3 = ` <div class="container">
+<div class="tituloPergunta">
+    <h1>I was born in.... ?</h1>
+</div>
+
+<button id="questao1" value="1" onclick="verificarResposta(this)">Nashiville</button><br>
+<button id="questao2" value="2" onclick="verificarResposta(this)">1989</button><br>
+<button id="questao3" value="3" onclick="verificarResposta(this)">Estados Unidos</button><br>
+<button id="questao4" value="4" onclick="verificarResposta(this)">1988</button>
+</div>`;
+
+    var pergunta4 = ` <div class="container">
+<div class="tituloPergunta">
+    <h1>Primeira música que Taylor escreveu?</h1>
+</div>
+
+<button id="questao1" value="1" onclick="verificarResposta(this)">You belong with me</button><br>
+<button id="questao2" value="2" onclick="verificarResposta(this)">Picture to burn</button><br>
+<button id="questao3" value="3" onclick="verificarResposta(this)">Lucky You</button><br>
+<button id="questao4" value="4" onclick="verificarResposta(this)">Tim McGraw</button>
+</div>`;
+
+    var pergunta5 = ` <div class="container">
+<div class="tituloPergunta">
+    <h1>Quando foi feito o anuncio que ela regravaria seus primeiros albuns?</h1>
+</div>
+
+<button id="questao1" value="1" onclick="verificarResposta(this)">Agosto de 2019</button><br>
+<button id="questao2" value="2" onclick="verificarResposta(this)">Novembro de 2019</button><br>
+<button id="questao3" value="3" onclick="verificarResposta(this)">Abril de 2019</button><br>
+<button id="questao4" value="4" onclick="verificarResposta(this)">Setembro de 2019</button>
+</div>`;
+
+    var pergunta6 = ` <div class="container">
+<div class="tituloPergunta">
+    <h1>Nome dos gatos da Taylor?</h1>
+</div>
+
+<button id="questao1" value="1" onclick="verificarResposta(this)">Benji, Meredith e Tim</button><br>
+<button id="questao2" value="2" onclick="verificarResposta(this)">Banson, Button e Grey  </button><br>
+<button id="questao3" value="3" onclick="verificarResposta(this)">Ivy, Benjamin e Betty</button><br>
+<button id="questao4" value="4" onclick="verificarResposta(this)">Meredith, Olivia e Benjamin</button>
+</div>`;
+
+
+    var pergunta7 = ` <div class="container">
+<div class="tituloPergunta">
+    <h1>Qual música fala sobre as friendship?</h1>
+</div>
+
+<button id="questao1" value="1" onclick="verificarResposta(this)">Willow</button><br>
+<button id="questao2" value="2" onclick="verificarResposta(this)">End Game</button><br>
+<button id="questao3" value="3" onclick="verificarResposta(this)">You're on your own, kid</button><br>
+<button id="questao4" value="4" onclick="verificarResposta(this)">Love Story</button>
+</div>`;
+
+
+    var pergunta8 = ` <div class="container">
+<div class="tituloPergunta">
+    <h1>Quantos albuns a Taylor já regravou?</h1>
+</div>
+
+<button id="questao1" value="1" onclick="verificarResposta(this)">5</button><br>
+<button id="questao2" value="2" onclick="verificarResposta(this)">3</button><br>
+<button id="questao3" value="3" onclick="verificarResposta(this)">2</button><br>
+<button id="questao4" value="4" onclick="verificarResposta(this)">4</button>
+</div>`;
+
+
+    var pergunta9 = ` <div class="container">
+<div class="tituloPergunta">
+    <h1>O nome da cobra da turnê de Reputation?</h1>
+</div>
+
+<button id="questao1" value="1" onclick="verificarResposta(this)">Gean</button><br>
+<button id="questao2" value="2" onclick="verificarResposta(this)">Karen</button><br>
+<button id="questao3" value="3" onclick="verificarResposta(this)">Kim</button><br>
+<button id="questao4" value="4" onclick="verificarResposta(this)">Kanye</button>
+</div>`;
+
+
+    var pergunta10 = ` <div class="container">
+<div class="tituloPergunta">
+    <h1>Quais filmes e séries que a Taylor já atuou?</h1>
+</div>
+
+<button id="questao1" value="1" onclick="verificarResposta(this)">Idas e Vindas do Amor, Hannah Montana, Deadpool e A Culpa das Estrelas</button><br>
+<button id="questao2" value="2" onclick="verificarResposta(this)">CSI, Cats, O Doador de Memórias e Amsterdam</button><br>
+<button id="questao3" value="3" onclick="verificarResposta(this)">Hannah Montana, CSI, Idas e Vindas do Amor, O Doador de Memórias, Cats e Amsterdam</button><br>
+<button id="questao4" value="4" onclick="verificarResposta(this)">Ela nunca atuou</button>
+</div>`;
+
+
+    var pergunta11 = ` <div class="container">
+<div class="tituloPergunta">
+    <h1>A taylor é....?</h1>
+</div>
+
+<button id="questao1" value="1" onclick="verificarResposta(this)">Cantora, Compositora, roteirista, Diretora, Atriz e Doutora </button><br>
+<button id="questao2" value="2" onclick="verificarResposta(this)">Cantora, Atriz, Diretora</button><br>
+<button id="questao3" value="3" onclick="verificarResposta(this)">Compositora, Doutora, Roteirista, Atriz</button><br>
+<button id="questao4" value="4" onclick="verificarResposta(this)">Diretora, Atriz, Cantora, Dubladora</button>
+</div>`;
+
+
+    var pergunta12 = ` <div class="container">
+<div class="tituloPergunta">
+    <h1>"If you children some day<br>When they point to pictures...." </h1>
+</div>
+
+<button id="questao1" value="1" onclick="verificarResposta(this)">"Promise me this"</button><br>
+<button id="questao2" value="2" onclick="verificarResposta(this)">"Please, tell' em my name"</button><br>
+<button id="questao3" value="3" onclick="verificarResposta(this)">"And force us into a goodbye"</button><br>
+<button id="questao4" value="4" onclick="verificarResposta(this)">"How the kingdom lights shined just for me and you"</button>
+</div>`;
+
+
+    var pergunta13 = ` <div class="container">
+<div class="tituloPergunta">
+    <h1>"Remember when you hit the brakes too soon?.... "?</h1>
+</div>
+
+<button id="questao1" value="1" onclick="verificarResposta(this)">"You were looking at me"</button><br>
+<button id="questao2" value="2" onclick="verificarResposta(this)">"Baby, like we stood a chance"</button><br>
+<button id="questao3" value="3" onclick="verificarResposta(this)">"I walked out, I said, "I'm setting you free""</button><br>
+<button id="questao4" value="4" onclick="verificarResposta(this)">"20 stitches in hospital room"</button>
+</div>`;
 
 
 
@@ -91,6 +205,7 @@ var pergunta13 = ``;
             quiz.innerHTML = listaPerguntas[1];
             questaoAtual = listaPerguntas[1];
 
+
         } else if (questaoAtual == listaPerguntas[1] && valorBotao == 3) {
             quiz.innerHTML = listaPerguntas[2];
             questaoAtual = listaPerguntas[2];
@@ -100,6 +215,112 @@ var pergunta13 = ``;
             quiz.innerHTML = listaPerguntas[2];
             questaoAtual = listaPerguntas[2];
             // seguir para a proxima pergunta!!!!!!!!!!!!!!!!!!
+
+
+        } else if (questaoAtual == listaPerguntas[2] && valorBotao == 2) {
+            quiz.innerHTML = listaPerguntas[3];
+            questaoAtual = listaPerguntas[3];
+
+        } else if (questaoAtual == listaPerguntas[2] && valorBotao != 2) {
+            quiz.innerHTML = listaPerguntas[3];
+            questaoAtual = listaPerguntas[3];
+
+
+        } else if (questaoAtual == listaPerguntas[3] && valorBotao == 3) {
+            quiz.innerHTML = listaPerguntas[4];
+            questaoAtual = listaPerguntas[4];
+
+        } else if (questaoAtual == listaPerguntas[3] && valorBotao != 3) {
+            quiz.innerHTML = listaPerguntas[4];
+            questaoAtual = listaPerguntas[4];
+
+
+
+        } else if (questaoAtual == listaPerguntas[4] && valorBotao == 1) {
+            quiz.innerHTML = listaPerguntas[5];
+            questaoAtual = listaPerguntas[5];
+
+        } else if (questaoAtual == listaPerguntas[4] && valorBotao != 1) {
+            quiz.innerHTML = listaPerguntas[5];
+            questaoAtual = listaPerguntas[5];
+
+
+        } else if (questaoAtual == listaPerguntas[5] && valorBotao == 4) {
+            quiz.innerHTML = listaPerguntas[6];
+            questaoAtual = listaPerguntas[6];
+
+        } else if (questaoAtual == listaPerguntas[5] && valorBotao != 4) {
+            quiz.innerHTML = listaPerguntas[6];
+            questaoAtual = listaPerguntas[6];
+
+
+
+        } else if (questaoAtual == listaPerguntas[6] && valorBotao == 3) {
+            quiz.innerHTML = listaPerguntas[7];
+            questaoAtual = listaPerguntas[7];
+
+        } else if (questaoAtual == listaPerguntas[6] && valorBotao != 3) {
+            quiz.innerHTML = listaPerguntas[7];
+            questaoAtual = listaPerguntas[7];
+
+
+
+        } else if (questaoAtual == listaPerguntas[7] && valorBotao == 4) {
+            quiz.innerHTML = listaPerguntas[8];
+            questaoAtual = listaPerguntas[8];
+
+        } else if (questaoAtual == listaPerguntas[7] && valorBotao != 4) {
+            quiz.innerHTML = listaPerguntas[8];
+            questaoAtual = listaPerguntas[8];
+
+
+
+        } else if (questaoAtual == listaPerguntas[8] && valorBotao == 2) {
+            quiz.innerHTML = listaPerguntas[9];
+            questaoAtual = listaPerguntas[9];
+
+        } else if (questaoAtual == listaPerguntas[8] && valorBotao != 2) {
+            quiz.innerHTML = listaPerguntas[9];
+            questaoAtual = listaPerguntas[9];
+
+
+        } else if (questaoAtual == listaPerguntas[9] && valorBotao == 3) {
+            quiz.innerHTML = listaPerguntas[10];
+            questaoAtual = listaPerguntas[10];
+
+        } else if (questaoAtual == listaPerguntas[9] && valorBotao != 3) {
+            quiz.innerHTML = listaPerguntas[10];
+            questaoAtual = listaPerguntas[10];
+
+
+
+        } else if (questaoAtual == listaPerguntas[10] && valorBotao == 1) {
+            quiz.innerHTML = listaPerguntas[11];
+            questaoAtual = listaPerguntas[11];
+
+        } else if (questaoAtual == listaPerguntas[10] && valorBotao != 1) {
+            quiz.innerHTML = listaPerguntas[11];
+            questaoAtual = listaPerguntas[11];
+
+
+            
+        } else if (questaoAtual == listaPerguntas[11] && valorBotao == 2) {
+            quiz.innerHTML = listaPerguntas[12];
+            questaoAtual = listaPerguntas[12];
+
+        } else if (questaoAtual == listaPerguntas[11] && valorBotao != 2) {
+            quiz.innerHTML = listaPerguntas[12];
+            questaoAtual = listaPerguntas[12];
+
+
+        } else if (questaoAtual == listaPerguntas[12] && valorBotao == 4) {
+            quiz.innerHTML = listaPerguntas[13];
+            questaoAtual = listaPerguntas[13];
+
+        } else if (questaoAtual == listaPerguntas[12] && valorBotao != 4) {
+            window.location = ""
+        
+           
         }
 
     }
