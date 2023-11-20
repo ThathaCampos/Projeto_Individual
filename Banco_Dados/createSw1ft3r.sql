@@ -11,3 +11,20 @@ senha varchar(45)
 );
 
 select * from usuario;
+
+create table questaoCerta(
+idQuestaoCerta int,
+fkUsuario int,
+numeroQuestao int,
+primary key (idQuestaoCerta, fkUsuario),
+constraint fkQuestaoUsuario foreign key (fkUsuario) references usuario(idUsuario)
+);
+
+create table feedback(
+idFeedback int,
+fkUsuario int,
+quantEstrelas int,
+dtAvaliacao timestamp,
+primary key (idFeedback, fkUsuario),
+constraint fkAvaliaUsuario foreign key (fkUsuario) references usuario (idUsuario)
+);
