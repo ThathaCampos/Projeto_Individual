@@ -1,50 +1,29 @@
 var usuarioModel = require("../models/usuarioModel");
-var aquarioModel = require("../models/aquarioModel");
+
 
 function autenticar(req, res) {
-    var nomeCompleto = req.body.nomeCompletoServer;
-    var dtNasc = req.body.dtNascServer;
     var nomeUsuario = req.body.nomeUsuarioServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
 
 
-    if (nomeUsuario == undefined) {
-        res.status(400).send("Seu nome de usuário está indefinido!");
-    } else if (email == undefined) {
-        res.status(400).send("Seu email está indefinido!");
-    } else if (senha == undefined) {
-        res.status(400).send("Sua senha está indefinida!")
-    } else {
+    if (nomeUsuario == "") {
+        res.status(400).send("Insira um usuário válido!");
+    }else if(email == "") {
+        res.status(400).send("Insira um email válido!");
+    }else if (senha == "") {
+        res.status(400).send("Insira uma senha válida!");
 
-    
-        usuarioModel.autenticar(nomeUsuario ,email, senha)
+    } else {
+        usuarioModel.autenticar(nomeUsuario, email, senha)
             .then(
                 function (resultadoAutenticar) {
-                    console.log(`\nResultados encontrados: ${resultadoAutenticar.length}`);
-                    console.log(`Resultados: ${JSON.stringify(resultadoAutenticar)}`); // transforma JSON em String
-
-                    if (resultadoAutenticar.length == 1) {
-                        console.log(resultadoAutenticar);
-
-                        aquarioModel.buscarAquariosPorEmpresa(resultadoAutenticar[0].idUsuario)
-                            .then((resultadoAquarios) => {
-                                if (resultadoAquarios.length > 0) {
-                                    res.json({
-                                        id: resultadoAutenticar[0].id,
-                                        email: resultadoAutenticar[0].email,
-                                        nomeUsuario: resultadoAutenticar[0].nomeUsuario,
-                                        senha: resultadoAutenticar[0].senha,
-                                        aquarios: resultadoAquarios
-                                    });
-                                } else {
-                                    res.status(204).json({ aquarios: [] });
-                                }
-                            })
-                    } else if (resultadoAutenticar.length == 0) {
-                        res.status(403).send("Email e/ou senha inválido(s)");
+                    if (resultadoAutenticar.length == 0) {
+                        res.status(400).send('Usuário e/ou senha inválidos!');
+                        console.log(`Login Controller:  ${resultadoAutenticar}`);
                     } else {
-                        res.status(403).send("Mais de um usuário com o mesmo login e senha!");
+                        res.status(201).json(resultadoAutenticar);
+                        console.log(`Login Controller Certo: ${resultadoAutenticar}`);
                     }
                 }
             ).catch(
@@ -54,6 +33,7 @@ function autenticar(req, res) {
                     res.status(500).json(erro.sqlMessage);
                 }
             );
+    
     }
 
 }
