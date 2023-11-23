@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
+    <link rel="stylesheet" href="./css/quiz.css">
 </head>
 
 <body>
 
+<div class="animacao">
     <div id="quiz">
         <!-- <div class="container">
 
@@ -22,6 +24,7 @@
             <button id="questao4" value="4" onclick="verificarResposta(this)">...................</button>
         </div> -->
     </div>
+</div>
 </body>
 
 </html>
@@ -144,7 +147,7 @@
 
     var pergunta11 = ` <div class="container">
 <div class="tituloPergunta">
-    <h1>A taylor é....?</h1>
+    <h1>A Taylor é....?</h1>
 </div>
 
 <button id="questao1" value="1" onclick="verificarResposta(this)">Cantora, Compositora, roteirista, Diretora, Atriz e Doutora </button><br>
@@ -355,9 +358,8 @@
             console.log("Frase Aleatoria");
 
                     if (resposta.status == 201) {
-                        console.log('Se funcionar eu irei entregar um chocolate para o Lucas')
                         setTimeout(() => {
-                            window.location.href = 'telaFinalQuiz.html'
+                            window.location = 'telaFinalQuiz.html'
 
                         }, '1000');
 

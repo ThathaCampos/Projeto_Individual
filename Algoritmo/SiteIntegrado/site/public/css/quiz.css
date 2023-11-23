@@ -1,43 +1,53 @@
-/* Estilização para a página inicial do quiz */
-.informacao{
-    display: flex;
-    width: 100%;
-    height: 100%;
-
-
+/* Estilização do quiz */
+/* https://css.glass/ */
+body {
+    margin: 0%;
+    overflow-y: hidden;
 }
 
-.informacao .container{
+#quiz {
     display: flex;
     width: 100%;
-    height: 800px;
+    height: 620px;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../assets/imgs/img8.jpg);
+    background-size: cover;
+}
+
+#quiz .container {
+    display: flex;
+    margin-top: 2%;
+    width: 90%;
+    height: 480px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    text-align: center;
+    background: rgba(199, 194, 194, 0.36);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.5px);
+    -webkit-backdrop-filter: blur(8.5px);
+    border: 2px solid rgba(34, 32, 32, 0.59);
 }
 
-.informacao .container h1{
-    font-size: 35px;
+#quiz .container .tituloPergunta {
+    font-size: 18px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
 }
 
-
-
-
-
-/* Estilização do quiz */
-#quiz {
-    display: flex;
-   
+button {
+    font-family: 'Montserrat', sans-serif;
+    width: 40%;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 20px;
+    background-image: linear-gradient(to right bottom, #16a0dc, #52a9df, #73b3e1, #8dbde4, #a5c7e6, #a0c0e0, #9bbadb, #96b3d5, #769ac6, #5780b7, #3668a7, #015097);
 }
 
-#quiz .container{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-}
-
-#quiz .container .tituloPergunta{
-    display: flex;
+button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all 0.6s;
 }
