@@ -72,7 +72,8 @@ a {
 .bg-fundo .corpo {
     display: flex;
     width: 100%;
-    height: 618px;
+    height: 750px;
+    margin-top: 2%;
 
 }
 
@@ -81,12 +82,18 @@ a {
     flex-direction: column;
     align-items: center;
     width: 60%;
+    background: rgba(176, 224, 236, 0.30);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.0px);
+    -webkit-backdrop-filter: blur(8.5px);
+    border: 2px solid rgba(0, 0, 0, 0.59);
 
 }
 
 
 .bg-fundo .corpo .container .texto h2 {
-    color: rgb(255, 255, 255);
+    color: rgb(8, 58, 133);
     align-items: center;
     font-size: 48px;
     text-shadow: 2px 2px 5px rgba(51, 46, 46, 0.719);
@@ -94,6 +101,7 @@ a {
 }
 
 .bg-fundo .corpo .container .texto p {
+    padding: 2%;
     font-size: 25px;
     text-indent: 5px;
     letter-spacing: 1.1px;
@@ -105,22 +113,19 @@ a {
 
 /* Inicio estilização das eras */
 .erasTaylor {
-    /* background-image: linear-gradient(to right bottom, #16a0dc, #52a9df, #73b3e1, #8dbde4, #a5c7e6, #a0c0e0, #9bbadb, #96b3d5, #769ac6, #5780b7, #3668a7, #015097); */
-    background-image: url(../assets/imgs/gaivotas.jpg);
-    background-size: cover;
+    background-image: linear-gradient(to right bottom, #16a0dc, #52a9df, #73b3e1, #8dbde4, #a5c7e6, #a0c0e0, #9bbadb, #96b3d5, #769ac6, #5780b7, #3668a7, #015097); 
+    
 }
 
 .erasTaylor .eras {
     display: flex;
     width: 100%;
-    height: auto;
-
+   
 }
 
 .erasTaylor .eras .sobreEras {
     display: flex;
     width: 100%;
-    height: 100px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -141,7 +146,6 @@ a {
 
 .card {
     display: flex;
-    margin-top: 2%;
     width: 100%;
     justify-content: space-around;
     align-items: center;
@@ -171,59 +175,98 @@ a {
 }
 
 /* Iniciiiioio da estização do quiz*/
+.tudo {
+    background-image: linear-gradient(to right bottom, #16a0dc, #52a9df, #73b3e1, #8dbde4, #a5c7e6, #a0c0e0, #9bbadb, #96b3d5, #769ac6, #5780b7, #3668a7, #015097); 
+   
+
+}
+
 .quiz {
+    border-top: 2px solid white;
     display: flex;
     align-items: center;
-    width: 100%;
     flex-direction: column;
-    /* background-image: url(../assets/imgs/semFundo.png);
-    background-size: cover;*/
+    width: 100%;
+    height: 500px;
+    
+
 } 
 
 .quiz h2 {
-    color: rgb(0, 0, 0);
-    font-size: 30px;
+    color: rgb(255, 255, 255);
+    font-size: 38px;
 }
 
 
 .quiz .sobreQuiz {
     display: flex;
-    width: 80%;
+    width: 50%;
     flex-direction: column;
+    margin-right: 30%;
     float: left;
 }
 
+.quiz .sobreQuiz .imagem{
+    display: flex;
+    width: 100px;
+    margin-left: 50%;
+    
+}
 .sobreQuiz h3 {
     font-size: 30px;
-    color: white;
+    color: rgb(207, 45, 85);
 }
 
-.sobreQuiz p {
+.sobreQuiz span {
     font-size: 20px;
-}
-
-.quiz .sobreQuiz .regras {
-    display: flex;
-    flex-direction: column;
-    margin-left: 5%;
-    justify-content: center;
-}
-
-.regras p {
-    color: white;
-    font-size: 25px;
-}
-
-.regras ul {
-    font-weight: bold;
-    font-size: 20px;
-    list-style-type: decimal;
 }
 
 .botao{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 5%;
     width: 100%;
-    
 }
+
+.botao button{
+    font-size: 20px;
+    width: 100px;
+    border-radius: 20px;
+}
+
+button:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: all 0.3s;
+}
+
+.footer {
+    border-top: 2px solid white;
+    height: 70px;
+    width: 100%;
+    background-color: #62A1FF;
+    color: #fff;
+    display: flex;
+}
+
+.footer h4 {
+    margin: 0;
+}
+
+.footer .container {
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.footer .container .contatos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+}
+  

@@ -8,7 +8,7 @@ body {
 
 .navbar {
     
-    border-bottom: 2px solid rgb(176, 50, 226);
+    border-bottom: 2px solid rgb(247, 247, 247);
     background-color: #62A1FF;
     margin: 0px 0px 3px 0px;
     position: fixed;
@@ -44,10 +44,13 @@ body {
 }
 
 a {
-    color: rgb(255, 255, 255), 255;
+    color: white;
     text-decoration: none;
 }
 
+#cadastro {
+    color: #015097;
+}
 /* estilizando os campos */
 .campos {
     display: flex;
