@@ -116,16 +116,15 @@
         }).then(function (resposta) {
             console.log("ESTOU NO THEN DO entrar()!")
            
-            if (resposta.status == 201) {
-                console.log(resposta);
+           if (resposta.status == 201) {
+               console.log(resposta);
 
-
-                resposta.json().then(res => {
-                   sessionStorage.setItem('idUsuario', res[0].idUsuario);
-                   sessionStorage.setItem('nomeUsuario', res[0].nomeUsuario);
-                   sessionStorage.setItem('email', res[0].email);
-                   sessionStorage.setItem('senha', res[0].senha);
-                   console.log(`Login.html: ${res}`)
+               resposta.json().then(res => {
+                  sessionStorage.setItem('idUsuario', res[0].idUsuario);
+                  sessionStorage.setItem('nomeUsuario', res[0].nomeUsuario);
+                  sessionStorage.setItem('email', res[0].email);
+                  sessionStorage.setItem('senha', res[0].senha);
+                  console.log(`Login.html: ${res}`)
 
                     setTimeout(function () {
                         window.location = "index.html";

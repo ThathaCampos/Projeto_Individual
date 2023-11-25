@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+
     <div id="fimQuiz">
-        <h1>Você acertou:  de 13 perguntas</h1>
+        <h1>Você acertou: <span id="b_quantidade"></span> de 13 perguntas</h1>
         <div id="mostrarMesangem"></div>
-         
+
     </div>
-    
+
 </body>
+
 </html>
 <script>
+    b_quantidade.innerHTML =  sessionStorage.setItem('quantCerta');
 
- 
+
 </script>

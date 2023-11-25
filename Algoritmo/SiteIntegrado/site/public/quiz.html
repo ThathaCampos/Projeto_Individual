@@ -9,9 +9,9 @@
     <link rel="icon" href="./assets/imgs/semFundo.png" />
 </head>
 
-<body>
+<body onload="validarSessao()">
 
-<div class="animacao">
+
     <div id="quiz">
         <!-- <div class="container">
 
@@ -25,7 +25,7 @@
             <button id="questao4" value="4" onclick="verificarResposta(this)">...................</button>
         </div> -->
     </div>
-</div>
+    </div>
 </body>
 
 </html>
@@ -345,7 +345,7 @@
         var quantAcertos = quantAcerto;
         var fkUsuario = idUsuario;
 
-        fetch ("/questaoCertas/cadastrarAcerto", {
+        fetch("/questaoCertas/cadastrarAcerto", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -355,19 +355,27 @@
                 fkUsuarioServer: fkUsuario
             }),
         })
-        .then(function (resposta) {
-            console.log("Frase Aleatoria");
+            .then(function (resposta) {
+                console.log("Frase Aleatoria");
 
-                    if (resposta.status == 201) {
-                        setTimeout(() => {
-                            window.location = 'telaFinalQuiz.html'
+                if (resposta.status == 201) {
+                    console.log(resposta);
 
-                        }, '1000');
+                    resposta.json().then(res => {
+                        sessionStorage.setItem('quantCerta', res[0].quantCerta);
+                       
 
-                    } else {
-                        console.log('Erro!!!!!');
-                    }
-                })
-        
+                        setTimeout(function () {
+                          window.location = "telaFinalQuiz.html";
+                        }, 1000); // apenas para exibir o loading
+
+                    });
+
+                } else {
+                    console.log('Erro!!!!!')
+                }
+            });
+
     }
+
 </script>

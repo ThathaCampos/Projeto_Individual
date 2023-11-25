@@ -3,7 +3,7 @@
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-
+    background-image: linear-gradient(to right bottom, #16a0dc, #52a9df, #73b3e1, #8dbde4, #a5c7e6, #a0c0e0, #9bbadb, #96b3d5, #769ac6, #5780b7, #3668a7, #015097);
 }
 
 
@@ -57,113 +57,112 @@ a {
 /* Estilizando somente o container - vai ser a estilização padrão*/
 .container {
     display: flex;
-    width: 80%;
+    width: 50%;
     margin: auto;
 }
 
 
 /* estilização do corpo da página*/
 
-.bg-fundo {
-    background-image: url(../assets/imgs/banner.png);
-    background-size: cover;
-}
-
-.bg-fundo .corpo {
+.corpo {
     display: flex;
     width: 100%;
     height: 750px;
     margin-top: 2%;
+    background-image: linear-gradient(90deg, rgba(0,0,0,0.804359243697479) 0%, rgba(255,255,255,0.29735644257703087) 40%, rgba(0,0,0,0.70) 82%), url(../assets/imgs/Taylor\ Swift\ 1989\ Computer\ Wallpaper.jpg);
 
 }
 
-.bg-fundo .corpo .container .texto {
+.corpo .titulo {
+    margin-top: 4%;
     display: flex;
+    color: rgb(56, 205, 250);
+    align-items: center;
     flex-direction: column;
-    align-items: center;
-    width: 60%;
-    background: rgba(176, 224, 236, 0.30);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(2.0px);
-    -webkit-backdrop-filter: blur(8.5px);
-    border: 2px solid rgba(0, 0, 0, 0.59);
-
-}
-
-
-.bg-fundo .corpo .container .texto h2 {
-    color: rgb(8, 58, 133);
-    align-items: center;
-    font-size: 48px;
+    width: 50%;
+    height: 80%;
+    font-size: 30px;
     text-shadow: 2px 2px 5px rgba(51, 46, 46, 0.719);
+}
+
+
+.corpo .titulo img{
+    display: flex;
+    margin-top: 8%;
+    width: 90%;
+    height: 60%;
 
 }
 
-.bg-fundo .corpo .container .texto p {
-    padding: 2%;
-    font-size: 25px;
-    text-indent: 5px;
-    letter-spacing: 1.1px;
+.corpo .container .texto {
+    display: flex;
+    width: 100%;
+    height: 30%;
+    margin-top: 15%;
+    flex-direction: row;
+    font-size: 24px;
+    text-indent: 8px;
+    text-align: center;
+    line-height: 40px;
+    letter-spacing: 1.2px;
     text-shadow: 2px 2px 5px rgba(70, 63, 63, 0.719);
+    color: white;
 }
-
 /* Fim estilização do corpo */
 
 
 /* Inicio estilização das eras */
 .erasTaylor {
-    background-image: linear-gradient(to right bottom, #16a0dc, #52a9df, #73b3e1, #8dbde4, #a5c7e6, #a0c0e0, #9bbadb, #96b3d5, #769ac6, #5780b7, #3668a7, #015097); 
-    
+   display: flex;
+   height: 600px;
 }
 
 .erasTaylor .eras {
     display: flex;
-    width: 100%;
-   
+    width: 50%;
+
 }
 
 .erasTaylor .eras .sobreEras {
     display: flex;
     width: 100%;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-top: 2px solid white;
+    padding: 40px;
+    font-size: 22px;
+    text-indent: 5px;
+    text-align: center;
+    line-height: 30px;
+    letter-spacing: 1.0px;
+    text-shadow: 2px 2px 5px rgba(70, 63, 63, 0.719);
 
 }
 
-.erasTaylor .eras .sobreEras h2 {
-    font-size: 38px;
-    color: white;
-}
-
-.erasTaylor .eras .sobreEras p {
-    font-size: 20px;
-    margin: 0;
-
+.cards {
+    display: flex;
+    width: 50%;
+    background-color:#629abe;
 }
 
 .card {
     display: flex;
-    width: 100%;
+    width: 50%;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .card .cardAlbuns {
     display: flex;
-    height: 200px;
+
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-
 }
 
 .card .cardAlbuns img {
     display: flex;
-    width: 150px;
-    height:150px;
+    width: 140px;
+    height: 120px;
 }
 
 .card .cardAlbuns img:hover {
@@ -175,53 +174,57 @@ a {
 }
 
 /* Iniciiiioio da estização do quiz*/
-.tudo {
-    background-image: linear-gradient(to right bottom, #16a0dc, #52a9df, #73b3e1, #8dbde4, #a5c7e6, #a0c0e0, #9bbadb, #96b3d5, #769ac6, #5780b7, #3668a7, #015097); 
-   
-
-}
-
-.quiz {
-    border-top: 2px solid white;
+.corpo-quiz {
     display: flex;
-    align-items: center;
-    flex-direction: column;
     width: 100%;
-    height: 500px;
-    
+    height: 600px;
+    border-bottom: 2px solid white;
 
-} 
+}
 
-.quiz h2 {
-    color: rgb(255, 255, 255);
-    font-size: 38px;
+.corpo-quiz .card-titulo{
+    background-color:rgba(39, 90, 148, 0.829);
+    width: 50%;
+
+
+}
+.corpo-quiz .titulo {
+    display: flex;
+    width: 90%;
+    margin-top: 15%;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 22px;
+    text-indent: 5px;
+    text-align: center;
+    line-height: 35px;
+    letter-spacing: 1.0px;
+    text-shadow: 2px 2px 5px rgba(70, 63, 63, 0.719);
+    color: white;
+
+
 }
 
 
-.quiz .sobreQuiz {
+.corpo-quiz .container-banner {
+    display: flex;
+    width: 50%;
+    background-image: linear-gradient(90deg, rgba(0,0,0,0.804359243697479) 0%, rgba(255,255,255,0.29735644257703087) 40%, rgba(0,0,0,0.70) 82%), url(../assets/imgs/reputation\ aesthetic\ collage\ background.jpg);
+}
+
+.corpo-quiz .container-banner .container{
     display: flex;
     width: 50%;
     flex-direction: column;
-    margin-right: 30%;
-    float: left;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 2px 2px 5px rgba(70, 63, 63, 0.719);
+    color: white;
+    font-size: 22px;
 }
 
-.quiz .sobreQuiz .imagem{
-    display: flex;
-    width: 100px;
-    margin-left: 50%;
-    
-}
-.sobreQuiz h3 {
-    font-size: 30px;
-    color: rgb(207, 45, 85);
-}
-
-.sobreQuiz span {
-    font-size: 20px;
-}
-
-.botao{
+.botao {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -229,10 +232,12 @@ a {
     width: 100%;
 }
 
-.botao button{
-    font-size: 20px;
-    width: 100px;
+.botao button {
+    font-size: 30px;
+    width: 150px;
     border-radius: 20px;
+    background-image: linear-gradient(to right bottom, #16a0dc, #52a9df, #73b3e1, #8dbde4, #a5c7e6, #a0c0e0, #9bbadb, #96b3d5, #769ac6, #5780b7, #3668a7, #015097);
+    color: white;
 }
 
 button:hover {
@@ -242,7 +247,6 @@ button:hover {
 }
 
 .footer {
-    border-top: 2px solid white;
     height: 70px;
     width: 100%;
     background-color: #62A1FF;
@@ -255,6 +259,7 @@ button:hover {
 }
 
 .footer .container {
+    display: flex;
     align-items: center;
     justify-content: space-around;
     flex-direction: row;
@@ -263,10 +268,10 @@ button:hover {
     margin: 0;
 }
 
-.footer .container .contatos{
+.footer .container .contatos {
     display: flex;
     align-items: center;
     justify-content: center;
- 
+    width: 10%;
 }
-  
+
