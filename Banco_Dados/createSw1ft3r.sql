@@ -12,7 +12,7 @@ senha varchar(45)
 );
 
 select * from usuario;
-SELECT idUsuario, nomeUsuario, email, senha FROM usuario WHERE nomeUsuario = 'thamires@email.com' AND email = '123456' AND senha = 'undefined';
+
 
 create table questaoCerta(
 idQuestaoCerta int auto_increment,
