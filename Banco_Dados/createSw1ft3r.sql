@@ -12,6 +12,9 @@ senha varchar(45)
 );
 
 select * from usuario;
+select fkUsuario, nomeUsuario, max(quantCerta) Quantidade_de_acertos from questaoCerta join usuario on fkUsuario = idUsuario 
+group by fkUsuario, nomeUsuario order by Quantidade_de_acertos and nomeUsuario limit 3;
+
 
 
 create table questaoCerta(
@@ -22,6 +25,8 @@ primary key (idQuestaoCerta, fkUsuario),
 constraint fkQuestaoUsuario foreign key (fkUsuario) references usuario(idUsuario)
 );
 select * from questaoCerta;
+delete from questaoCerta where idQuestaoCerta in (4, 6, 7, 8, 12,13, 14);
+SELECT quantCerta from questaoCerta where fkUsuario = 1 order by idQuestaoCerta desc limit 1;
 
 create table feedback(
 idFeedback int,
