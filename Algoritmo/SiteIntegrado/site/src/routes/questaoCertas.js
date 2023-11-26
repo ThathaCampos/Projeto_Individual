@@ -8,4 +8,15 @@ router.post("/cadastrarAcerto", function (req, res) {
     questaoCertaController.cadastrarAcerto(req, res);
 })
 
+router.get("/mostrarAcerto/:fkUsuario", function (req, res) {
+    questaoCertaController.mostrarAcerto(req, res);
+})
+
+router.get("/mostrarRanking", function (req, res) {
+    questaoCertaController.mostrarRanking(req, res);
+})
+
+// Vai inserir no banco de dados = (post)
+// Vai pegar no banco de dados = (get)
+// Dar um update no banco de dados = (put)
 module.exports = router;

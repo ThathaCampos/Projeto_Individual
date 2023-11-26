@@ -1,17 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>..............</title>
+    <link rel="icon" href="./assets/icon/iconTs2.jpg" />
 </head>
 
-<body>
+<body onload="mostrarAcerto(), mostrarRanking()">
 
     <div id="fimQuiz">
-        <h1>Você acertou: <span id="b_quantidade"></span> de 13 perguntas</h1>
-        <div id="mostrarMesangem"></div>
+
+    </div>
+
+    <div id="mostrarRank">
+        <h1>Ranking</h1>
+        <h3>Posição | Usuário | Pontuação</h3>
 
     </div>
 
@@ -19,7 +24,65 @@
 
 </html>
 <script>
-    b_quantidade.innerHTML =  sessionStorage.setItem('quantCerta');
 
+    var qtdCerta = 0;
+    var frase = "";
+    function mostrarAcerto() {
+
+        //ele só pega
+        fetch(`/questaoCertas/mostrarAcerto/${sessionStorage.getItem(`idUsuario`)}`, {
+
+            // Vai executar
+        }).then(function (resposta) {
+
+            // Vai retornar um vetor = (resposta)
+            if (resposta.status == 201) {
+                resposta.json().then(resposta => {
+                    qtdCerta = resposta[0].quantCerta;
+                    fimQuiz.innerHTML = ` <h1>Você acertou: ${qtdCerta} de 13 perguntas</h1>
+            <div id="mostrarMensagem"></div>`
+                })
+            }
+            setTimeout(() => {
+                if (qtdCerta <= 5) {
+                    frase = `Um mero mortal!`
+
+                } else if (qtdCerta > 5 && qtdCerta <= 8) {
+                    frase = `Até que tem bom gosto!`
+
+                } else {
+                    frase = `Olha só!!! Temos um swifter entre nós!`
+                }
+                mostrarMensagem.innerHTML = `${frase}`
+            }, 1000)
+
+        })
+    }
+
+    function mostrarRanking() {
+
+        //ele só pega
+        fetch(`/questaoCertas/mostrarRanking/`, {
+
+            // Vai executar
+        }).then(function (resposta) {
+
+            // Vai retornar um vetor = (resposta)
+            if (resposta.status == 201) {
+                resposta.json().then(res => {
+
+
+                    for (var contador = 0; contador < res.length; contador++) {
+                        mostrarRank.innerHTML += `
+                        ${contador + 1}º ${res[contador].nomeUsuario} ${res[contador].Quantidade_de_acertos}<br>
+                        `
+
+                    }
+
+                })
+            }
+
+        })
+    }
 
 </script>

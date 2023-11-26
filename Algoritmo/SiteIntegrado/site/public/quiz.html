@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
     <link rel="stylesheet" href="./css/quiz.css">
-    <link rel="icon" href="./assets/imgs/semFundo.png" />
+    <link rel="icon" href="./assets/icon/iconTs2.jpg" />
 </head>
 
-<body onload="validarSessao()">
+<body>
 
 
     <div id="quiz">
@@ -151,8 +151,8 @@
     <h1>A Taylor é....?</h1>
 </div>
 
-<button id="questao1" value="1" onclick="verificarResposta(this)">Cantora, Compositora, roteirista, Diretora, Atriz e Doutora </button><br>
-<button id="questao2" value="2" onclick="verificarResposta(this)">Cantora, Atriz, Diretora</button><br>
+<button id="questao1" value="1" onclick="verificarResposta(this)">Cantora, Compositora, Roteirista, Diretora, Atriz e Doutora </button><br>
+<button id="questao2" value="2" onclick="verificarResposta(this)">Cantora, Compositora, Atriz, Diretora</button><br>
 <button id="questao3" value="3" onclick="verificarResposta(this)">Compositora, Doutora, Roteirista, Atriz</button><br>
 <button id="questao4" value="4" onclick="verificarResposta(this)">Diretora, Atriz, Cantora, Dubladora</button>
 </div>`;
@@ -362,7 +362,6 @@
                     console.log(resposta);
 
                     resposta.json().then(res => {
-                        sessionStorage.setItem('quantCerta', res[0].quantCerta);
                        
 
                         setTimeout(function () {
