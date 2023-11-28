@@ -1,16 +1,16 @@
 var questaoCertaModel = require("../models/questaoCertaModel");
 
 function cadastrarAcerto(req, res) {
-    var quantAcerto = req.body.quantAcertoServer;
+    var quantCerta = req.body.quantCertaServer;
     var fkUsuario = req.body.fkUsuarioServer;
 
-    if (quantAcerto == undefined) {
+    if (quantCerta == undefined) {
         res.status(400).send("Quantidade de acertos inválidos!");
     } else if (fkUsuario == undefined) {
         res.status(400).send("O usuario inválido!");
     } else {
 
-        questaoCertaModel.cadastrarAcerto(quantAcerto, fkUsuario)
+        questaoCertaModel.cadastrarAcerto(fkUsuario, quantCerta)
             .then(
                 function (resultado) {
                     res.status(201).json(resultado);

@@ -195,7 +195,7 @@
         carregarResposta1()
     };
 
-    var quantAcerto = 0;
+    var quantCerta = 0;
     var idUsuario = sessionStorage.getItem('idUsuario');
     function verificarResposta(botaoResposta) {
         var valorBotao = botaoResposta.value;
@@ -203,7 +203,7 @@
         if (questaoAtual == listaPerguntas[0] && valorBotao == 1) {
             quiz.innerHTML = listaPerguntas[1];
             questaoAtual = listaPerguntas[1];
-            quantAcerto++;
+            quantCerta++;
 
         } else if (questaoAtual == listaPerguntas[0] && valorBotao != 1) {
             // seguir para a proxima pergunta!!!!!!!!!!!!!!!!!!
@@ -214,7 +214,7 @@
         } else if (questaoAtual == listaPerguntas[1] && valorBotao == 3) {
             quiz.innerHTML = listaPerguntas[2];
             questaoAtual = listaPerguntas[2];
-            quantAcerto++;
+            quantCerta++;
 
         } else if (questaoAtual == listaPerguntas[1] && valorBotao != 3) {
             quiz.innerHTML = listaPerguntas[2];
@@ -225,7 +225,7 @@
         } else if (questaoAtual == listaPerguntas[2] && valorBotao == 2) {
             quiz.innerHTML = listaPerguntas[3];
             questaoAtual = listaPerguntas[3];
-            quantAcerto++;
+            quantCerta++;
 
         } else if (questaoAtual == listaPerguntas[2] && valorBotao != 2) {
             quiz.innerHTML = listaPerguntas[3];
@@ -235,7 +235,7 @@
         } else if (questaoAtual == listaPerguntas[3] && valorBotao == 3) {
             quiz.innerHTML = listaPerguntas[4];
             questaoAtual = listaPerguntas[4];
-            quantAcerto++;
+            quantCerta++;
 
         } else if (questaoAtual == listaPerguntas[3] && valorBotao != 3) {
             quiz.innerHTML = listaPerguntas[4];
@@ -246,7 +246,7 @@
         } else if (questaoAtual == listaPerguntas[4] && valorBotao == 1) {
             quiz.innerHTML = listaPerguntas[5];
             questaoAtual = listaPerguntas[5];
-            quantAcerto++;
+            quantCerta++;
 
         } else if (questaoAtual == listaPerguntas[4] && valorBotao != 1) {
             quiz.innerHTML = listaPerguntas[5];
@@ -256,7 +256,7 @@
         } else if (questaoAtual == listaPerguntas[5] && valorBotao == 4) {
             quiz.innerHTML = listaPerguntas[6];
             questaoAtual = listaPerguntas[6];
-            quantAcerto++;
+            quantCerta++;
 
         } else if (questaoAtual == listaPerguntas[5] && valorBotao != 4) {
             quiz.innerHTML = listaPerguntas[6];
@@ -267,7 +267,7 @@
         } else if (questaoAtual == listaPerguntas[6] && valorBotao == 3) {
             quiz.innerHTML = listaPerguntas[7];
             questaoAtual = listaPerguntas[7];
-            quantAcerto++;
+            quantCerta++;
 
         } else if (questaoAtual == listaPerguntas[6] && valorBotao != 3) {
             quiz.innerHTML = listaPerguntas[7];
@@ -278,7 +278,7 @@
         } else if (questaoAtual == listaPerguntas[7] && valorBotao == 4) {
             quiz.innerHTML = listaPerguntas[8];
             questaoAtual = listaPerguntas[8];
-            quantAcerto++;
+            quantCerta++;
 
         } else if (questaoAtual == listaPerguntas[7] && valorBotao != 4) {
             quiz.innerHTML = listaPerguntas[8];
@@ -289,7 +289,7 @@
         } else if (questaoAtual == listaPerguntas[8] && valorBotao == 2) {
             quiz.innerHTML = listaPerguntas[9];
             questaoAtual = listaPerguntas[9];
-            quantAcerto++;
+            quantCerta++;
 
         } else if (questaoAtual == listaPerguntas[8] && valorBotao != 2) {
             quiz.innerHTML = listaPerguntas[9];
@@ -299,7 +299,7 @@
         } else if (questaoAtual == listaPerguntas[9] && valorBotao == 3) {
             quiz.innerHTML = listaPerguntas[10];
             questaoAtual = listaPerguntas[10];
-            quantAcerto++;
+            quantCerta++;
 
         } else if (questaoAtual == listaPerguntas[9] && valorBotao != 3) {
             quiz.innerHTML = listaPerguntas[10];
@@ -310,7 +310,7 @@
         } else if (questaoAtual == listaPerguntas[10] && valorBotao == 1) {
             quiz.innerHTML = listaPerguntas[11];
             questaoAtual = listaPerguntas[11];
-            quantAcerto++;
+            quantCerta++;
 
         } else if (questaoAtual == listaPerguntas[10] && valorBotao != 1) {
             quiz.innerHTML = listaPerguntas[11];
@@ -321,7 +321,7 @@
         } else if (questaoAtual == listaPerguntas[11] && valorBotao == 2) {
             quiz.innerHTML = listaPerguntas[12];
             questaoAtual = listaPerguntas[12];
-            quantAcerto++;
+            quantCerta++;
 
         } else if (questaoAtual == listaPerguntas[11] && valorBotao != 2) {
             quiz.innerHTML = listaPerguntas[12];
@@ -329,7 +329,7 @@
 
 
         } else if (questaoAtual == listaPerguntas[12] && valorBotao == 4) {
-            quantAcerto++;
+            quantCerta++;
             // window.location = "telaFinalQuiz.html";
             cadastrarAcerto();
             window.location = 'avaliacao.html';
@@ -344,7 +344,7 @@
 
     function cadastrarAcerto() {
 
-        var quantAcertos = quantAcerto;
+        var quantAcertos = quantCerta;
         var fkUsuario = idUsuario;
 
         fetch("/questaoCertas/cadastrarAcerto", {
@@ -353,22 +353,18 @@
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                quantAcertoServer: quantAcertos,
+                quantCertaServer: quantAcertos,
                 fkUsuarioServer: fkUsuario
             }),
         })
             .then(function (resposta) {
-                console.log("Frase Aleatoria");
 
                 if (resposta.status == 201) {
                     console.log(resposta);
 
                     resposta.json().then(res => {
-                       
+                       console.log('Erro quiz')
 
-                        setTimeout(function () {
-                          window.location = "telaFinalQuiz.html";
-                        }, 1000); // apenas para exibir o loading
 
                     });
 

@@ -1,8 +1,8 @@
 var database = require("../database/config")
 
-function cadastrarAcerto(quantCerta, fkUsuario) {
+function cadastrarAcerto(fkUsuario, quantCerta) {
     var instrucao = `
-        INSERT INTO questaoCerta (quantCerta, fkUsuario) VALUES ('${quantCerta}', '${fkUsuario}');
+        INSERT INTO questaoCerta (fkUsuario, quantCerta) VALUES ('${fkUsuario}', '${quantCerta}');
         `
     return database.executar(instrucao);
 }

@@ -52,7 +52,7 @@
                     fimQuiz.innerHTML = ` <h1>Você acertou: ${qtdCerta} de 13 perguntas</h1>
             <div id="mostrarMensagem"></div>`
                 })
-            }
+            } 
             setTimeout(() => {
                 if (qtdCerta <= 5) {
                     frase = `Um mero mortal!`
@@ -65,6 +65,7 @@
                 }
                 mostrarMensagem.innerHTML = `${frase}`
             }, 1000)
+            
 
         })
     }

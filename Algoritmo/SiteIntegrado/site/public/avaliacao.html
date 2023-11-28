@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,33 +8,38 @@
     <link rel="icon" href="./assets/icon/iconTs2.jpg" />
     <link rel="stylesheet" href="./css/quiz.css">
 </head>
-<body>
+
+<body id="bodyAvaliacao">
 
 
     <div id="avaliacao">
-        <img onclick="mudarCor(this)" data-id="1" src="assets/imgs/estrelaEmBranco.png" >
-        <img onclick="mudarCor(this)" data-id="2" src="assets/imgs/estrelaEmBranco.png" >
-        <img onclick="mudarCor(this)" data-id="3" src="assets/imgs/estrelaEmBranco.png" >
-        <img onclick="mudarCor(this)" data-id="4" src="assets/imgs/estrelaEmBranco.png" >
-        <img onclick="mudarCor(this)" data-id="5" src="assets/imgs/estrelaEmBranco.png" >
+        <div class="background-Avaliacao">
+
+            <img onclick="mudarCor(this)" data-id="1" src="assets/imgs/estrelaEmBranco.png">
+            <img onclick="mudarCor(this)" data-id="2" src="assets/imgs/estrelaEmBranco.png">
+            <img onclick="mudarCor(this)" data-id="3" src="assets/imgs/estrelaEmBranco.png">
+            <img onclick="mudarCor(this)" data-id="4" src="assets/imgs/estrelaEmBranco.png">
+            <img onclick="mudarCor(this)" data-id="5" src="assets/imgs/estrelaEmBranco.png">
+        </div>
     </div>
 
-   
+
 
     <div class="botoes">
-        <button onclick="avaliaQuiz()">Avalie o Jogo</button>
+        <button id="botaoAvaliar" onclick="avaliaQuiz()">Avalie o Jogo</button>
         <button onclick="irParaEstatistica()">Avançar</button>
     </div>
 
-    
+
 </body>
+
 </html>
 
 <script>
 
     function irParaEstatistica() {
 
-        window.location = 'telaFInalQuiz.html'
+        window.location = 'telaFinalQuiz.html'
     }
 
     var pegandoValorId = 0;
@@ -42,46 +48,57 @@
 
         pegandoValorId = trocarCor.getAttribute('data-id');
 
-        if(pegandoValorId == 1) {
-            avaliacao.innerHTML = `<img onclick="mudarCor(this)" data-id="1" src="assets/imgs/estrelaPreenchida.png">
+        if (pegandoValorId == 1) {
+            avaliacao.innerHTML = ` <div class="background-Avaliacao">
+            <img onclick="mudarCor(this)" data-id="1" src="assets/imgs/estrelaPreenchida.png">
         <img onclick="mudarCor(this)" data-id="2" src="assets/imgs/estrelaEmBranco.png" >
         <img onclick="mudarCor(this)" data-id="3" src="assets/imgs/estrelaEmBranco.png" >
         <img onclick="mudarCor(this)" data-id="4" src="assets/imgs/estrelaEmBranco.png" >
         <img onclick="mudarCor(this)" data-id="5" src="assets/imgs/estrelaEmBranco.png" >
+    </div>
             `
-            
 
-        }else if(pegandoValorId == 2) {
-            avaliacao.innerHTML = `<img onclick="mudarCor(this)" data-id="1" src="assets/imgs/estrelaPreenchida.png">
+
+        } else if (pegandoValorId == 2) {
+            avaliacao.innerHTML = `
+            <div class="background-Avaliacao">
+                <img onclick="mudarCor(this)" data-id="1" src="assets/imgs/estrelaPreenchida.png">
         <img onclick="mudarCor(this)" data-id="2" src="assets/imgs/estrelaPreenchida.png" >
         <img onclick="mudarCor(this)" data-id="3" src="assets/imgs/estrelaEmBranco.png" >
         <img onclick="mudarCor(this)" data-id="4" src="assets/imgs/estrelaEmBranco.png" >
         <img onclick="mudarCor(this)" data-id="5" src="assets/imgs/estrelaEmBranco.png" >
+    </div>
             `
 
 
-        }else if(pegandoValorId == 3) {
-            avaliacao.innerHTML = `<img onclick="mudarCor(this)" data-id="1" src="assets/imgs/estrelaPreenchida.png">
+        } else if (pegandoValorId == 3) {
+            avaliacao.innerHTML = ` <div class="background-Avaliacao">
+            <img onclick="mudarCor(this)" data-id="1" src="assets/imgs/estrelaPreenchida.png">
         <img onclick="mudarCor(this)" data-id="2" src="assets/imgs/estrelaPreenchida.png" >
         <img onclick="mudarCor(this)" data-id="3" src="assets/imgs/estrelaPreenchida.png" >
         <img onclick="mudarCor(this)" data-id="4" src="assets/imgs/estrelaEmBranco.png" >
         <img onclick="mudarCor(this)" data-id="5" src="assets/imgs/estrelaEmBranco.png" >
+    </div>
             `
 
-        }else if(pegandoValorId == 4) {
-            avaliacao.innerHTML = `<img onclick="mudarCor(this)" data-id="1" src="assets/imgs/estrelaPreenchida.png">
+        } else if (pegandoValorId == 4) {
+            avaliacao.innerHTML = `  <div class="background-Avaliacao">
+            <img onclick="mudarCor(this)" data-id="1" src="assets/imgs/estrelaPreenchida.png">
         <img onclick="mudarCor(this)" data-id="2" src="assets/imgs/estrelaPreenchida.png" >
         <img onclick="mudarCor(this)" data-id="3" src="assets/imgs/estrelaPreenchida.png" >
         <img onclick="mudarCor(this)" data-id="4" src="assets/imgs/estrelaPreenchida.png" >
         <img onclick="mudarCor(this)" data-id="5" src="assets/imgs/estrelaEmBranco.png" >
+    </div>
             `
 
-        }else if(pegandoValorId == 5) {
-            avaliacao.innerHTML = `<img onclick="mudarCor(this)" data-id="1" src="assets/imgs/estrelaPreenchida.png">
+        } else if (pegandoValorId == 5) {
+            avaliacao.innerHTML = ` <div class="background-Avaliacao">
+            <img onclick="mudarCor(this)" data-id="1" src="assets/imgs/estrelaPreenchida.png">
         <img onclick="mudarCor(this)" data-id="2" src="assets/imgs/estrelaPreenchida.png" >
         <img onclick="mudarCor(this)" data-id="3" src="assets/imgs/estrelaPreenchida.png" >
         <img onclick="mudarCor(this)" data-id="4" src="assets/imgs/estrelaPreenchida.png" >
         <img onclick="mudarCor(this)" data-id="5" src="assets/imgs/estrelaPreenchida.png" >
+    </div>
             `
         }
     }
@@ -98,24 +115,17 @@
                 quantEstrelasServer: pegandoValorId
             }),
         })
-            // .then(function (resposta) {
-            //     console.log("Frase Aleatoria");
+            .then(function (resposta) {
 
-            //     if (resposta.status == 201) {
-            //         console.log(resposta);
 
-            //         resposta.json().then(res => {
-                       
+                if (resposta.status == 201) {
 
-            //             setTimeout(function () {
-            //               window.location = "telaFinalQuiz.html";
-            //             }, 1000); // apenas para exibir o loading
+                    botaoAvaliar.style.display = 'none';
 
-            //         });
 
-            //     } else {
-            //         console.log('Erro!!!!!')
-            //     }
-            // });
+                } else {
+                    console.log('Erro na avaliação!!!!!')
+                }
+            });
     }
 </script>
