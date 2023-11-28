@@ -20,6 +20,9 @@ router.get("/mostrarGrafico", function(req, res){
     questaoCertaController.mostrarGrafico(req, res);
 })
 
+router.post("/avaliarQuiz", function (req, res){
+    questaoCertaController.avaliarQuiz(req, res);
+}) 
 // Vai inserir no banco de dados = (post)
 // Vai pegar no banco de dados = (get)
 // Dar um update no banco de dados = (put)

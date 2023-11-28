@@ -76,9 +76,28 @@ function mostrarGrafico(req, res) {
     );
 }
 
+function avaliarQuiz(req, res) {
+
+    var quantEstrelas = req.body.quantEstrelasServer;
+    var fkUsuario = req.body.fkUsuarioServer;
+
+    questaoCertaModel.avaliarQuiz(fkUsuario, quantEstrelas)
+    .then(
+        function (resultado) {
+            res.status(201).json(resultado);
+        }
+    ).catch(
+        function (erro) {
+            console.log(erro);
+            res.status(500).send("Esse usuário já existe!");
+        }
+    );
+}
+
 module.exports = {
     cadastrarAcerto,
     mostrarAcerto,
     mostrarRanking,
-    mostrarGrafico
+    mostrarGrafico,
+    avaliarQuiz
 }

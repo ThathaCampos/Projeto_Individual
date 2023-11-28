@@ -16,8 +16,12 @@ function mostrarAcerto(fkUsuario) {
 
 function mostrarRanking() {
     var instrucao = `
-    select fkUsuario, nomeUsuario, max(quantCerta) Quantidade_de_acertos from questaoCerta join usuario on fkUsuario = idUsuario 
-group by fkUsuario, nomeUsuario order by Quantidade_de_acertos and nomeUsuario limit 3;
+    select nomeUsuario,
+	   quantCerta as Quantidade_de_acertos
+    from questaoCerta
+    join usuario on fkUsuario = idUsuario
+    where quantCerta >= 0
+    order by quantCerta and nomeUsuario desc limit 3;
     `
     return database.executar(instrucao);
 }
@@ -32,9 +36,18 @@ function mostrarGrafico() {
     `
     return database.executar(instrucao);
 }
+
+function avaliarQuiz(fkUsuario, quantEstrelas) {
+
+    var instrucao = `
+    insert into feedback(fkUsuario, quantEstrelas) values (${fkUsuario}, ${quantEstrelas})
+    `
+    return database.executar(instrucao);
+}
 module.exports = {
     cadastrarAcerto,
     mostrarAcerto,
     mostrarRanking,
-    mostrarGrafico
+    mostrarGrafico,
+    avaliarQuiz
 };

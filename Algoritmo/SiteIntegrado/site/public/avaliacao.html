@@ -21,7 +21,7 @@
    
 
     <div class="botoes">
-        <button onclick="avaliar()">Avalie o Jogo</button>
+        <button onclick="avaliaQuiz()">Avalie o Jogo</button>
         <button onclick="irParaEstatistica()">Avançar</button>
     </div>
 
@@ -88,5 +88,34 @@
 
     function avaliaQuiz() {
 
+        fetch("/questaoCertas/avaliarQuiz", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                fkUsuarioServer: sessionStorage.getItem('idUsuario'),
+                quantEstrelasServer: pegandoValorId
+            }),
+        })
+            // .then(function (resposta) {
+            //     console.log("Frase Aleatoria");
+
+            //     if (resposta.status == 201) {
+            //         console.log(resposta);
+
+            //         resposta.json().then(res => {
+                       
+
+            //             setTimeout(function () {
+            //               window.location = "telaFinalQuiz.html";
+            //             }, 1000); // apenas para exibir o loading
+
+            //         });
+
+            //     } else {
+            //         console.log('Erro!!!!!')
+            //     }
+            // });
     }
 </script>
