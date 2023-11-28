@@ -11,6 +11,13 @@ nomeUsuario varchar(45),
 senha varchar(45)
 );
 
+
+insert into usuario (idUsuario) values
+	(1),
+    (2),
+    (3),
+    (4);
+
 select * from usuario;
 select fkUsuario, nomeUsuario, max(quantCerta) Quantidade_de_acertos from questaoCerta join usuario on fkUsuario = idUsuario 
 group by fkUsuario, nomeUsuario order by Quantidade_de_acertos and nomeUsuario limit 3;
@@ -24,17 +31,34 @@ quantCerta int,
 primary key (idQuestaoCerta, fkUsuario),
 constraint fkQuestaoUsuario foreign key (fkUsuario) references usuario(idUsuario)
 );
+
+insert into questaoCerta (fkUsuario, quantCerta) values
+	(1, 4),
+    (1, 6),
+    (1, 13),
+    (2, 13),
+    (2, 10),
+    (3, 3),
+    (3, 8);
+
+insert into questaoCerta (fkUsuario, quantCerta) values
+	(2, 7);
+
 select * from questaoCerta;
-select count(fkUsuario) from questaoCerta where  quantCerta = 13 group by fkUsuario;
-select fkUsuario, count(fkUsuario) from questaoCerta where quantCerta = 7 group by fkUsuario;
 delete from questaoCerta where idQuestaoCerta in (4, 6, 7, 8, 12,13, 14);
 SELECT quantCerta from questaoCerta where fkUsuario = 1 order by idQuestaoCerta desc limit 1;
+select count(quantCerta) Menor_Que_Cinco,
+	   (select count(quantCerta) from questaoCerta where quantCerta > 5 and quantCerta <= 8) Menor_Que_8,
+       (select count(quantCerta) from questaoCerta where quantCerta > 8) Maior_Que_8
+from questaoCerta
+where quantCerta <= 5;
+
 
 create table feedback(
 idFeedback int,
 fkUsuario int,
 quantEstrelas int,
-dtAvaliacao timestamp,
+dtAvaliacao timestamp default current_timestamp,
 primary key (idFeedback, fkUsuario),
 constraint fkAvaliaUsuario foreign key (fkUsuario) references usuario (idUsuario)
 );
