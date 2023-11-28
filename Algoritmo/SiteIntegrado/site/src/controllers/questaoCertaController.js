@@ -61,7 +61,7 @@ function mostrarRanking(req, res) {
             );
     }
 
-function mostrarGrafico() {
+function mostrarGrafico(req, res) {
     
     questaoCertaModel.mostrarGrafico()
     .then(

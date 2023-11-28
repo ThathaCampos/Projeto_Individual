@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>..............</title>
+    <title>Estátisticas</title>
     <link rel="stylesheet" href="css/quiz.css">
     <link rel="icon" href="./assets/icon/iconTs2.jpg" />
 </head>
 
-<body onload="mostrarAcerto(), mostrarRanking()">
+<body onload="mostrarAcerto(), mostrarRanking(), mostrarGrafico()">
 
     <div id="fimQuiz">
 
@@ -21,20 +21,23 @@
     </div>
 
     <div id="mostrarGrafico">
-
+        <canvas id="myChart"></canvas>
     </div>
 
-
+    <div id="btn-home">
+        <button onclick="irParaHome()">Home</button>
+    </div>
 </body>
 
 </html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 
     var qtdCerta = 0;
     var frase = "";
     function mostrarAcerto() {
 
-        //ele só pega
+        //ele só pega - fetch em português é buscar/trazer
         fetch(`/questaoCertas/mostrarAcerto/${sessionStorage.getItem(`idUsuario`)}`, {
 
             // Vai executar
@@ -92,15 +95,35 @@
 
     function mostrarGrafico() {
         //ele só pega
-        fetch(`/questaoCertas/mostrarGrafico/`, {
+        fetch(`/questaoCertas/mostrarGrafico`, {
 
             // Vai executar
         }).then(function (resposta) {
 
             // Vai retornar um vetor = (resposta)
             if (resposta.status == 201) {
-                resposta.json().then(res => {
+                resposta.json().then(resposta => {
 
+                    const ctx = document.getElementById('myChart');
+
+                    new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['0-5', '6-8', '9-13'],
+                            datasets: [{
+                                label: '..............',
+                                data: [resposta[0].Menor_Que_Cinco, resposta[0].Menor_Que_8, resposta[0].Maior_Que_8],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
 
 
                 })
@@ -108,4 +131,10 @@
 
         })
     }
+
+
+function irParaHome() {
+
+    window.location = 'index.html';
+}
 </script>

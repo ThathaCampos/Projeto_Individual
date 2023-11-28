@@ -5,8 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avaliação</title>
     <link rel="icon" href="./assets/icon/iconTs2.jpg" />
+    <link rel="stylesheet" href="./css/quiz.css">
 </head>
 <body>
+
+
+    <div id="avaliacao">
+        <img onclick="mudarCor(this)" data-id="1" src="assets/imgs/estrelaEmBranco.png" >
+        <img onclick="mudarCor(this)" data-id="2" src="assets/imgs/estrelaEmBranco.png" >
+        <img onclick="mudarCor(this)" data-id="3" src="assets/imgs/estrelaEmBranco.png" >
+        <img onclick="mudarCor(this)" data-id="4" src="assets/imgs/estrelaEmBranco.png" >
+        <img onclick="mudarCor(this)" data-id="5" src="assets/imgs/estrelaEmBranco.png" >
+    </div>
+
+   
+
+    <div class="botoes">
+        <button onclick="avaliar()">Avalie o Jogo</button>
+        <button onclick="irParaEstatistica()">Avançar</button>
+    </div>
+
     
 </body>
 </html>
+
+<script>
+
+    function irParaEstatistica() {
+
+        window.location = 'telaFInalQuiz.html'
+    }
+
+    var pegandoValorId = 0;
+
+    function mudarCor(trocarCor) {
+
+        pegandoValorId = trocarCor.getAttribute('data-id');
+
+        if(pegandoValorId == 1) {
+            avaliacao.innerHTML = `<img onclick="mudarCor(this)" data-id="1" src="assets/imgs/estrelaPreenchida.png">
+        <img onclick="mudarCor(this)" data-id="2" src="assets/imgs/estrelaEmBranco.png" >
+        <img onclick="mudarCor(this)" data-id="3" src="assets/imgs/estrelaEmBranco.png" >
+        <img onclick="mudarCor(this)" data-id="4" src="assets/imgs/estrelaEmBranco.png" >
+        <img onclick="mudarCor(this)" data-id="5" src="assets/imgs/estrelaEmBranco.png" >
+            `
+            
+
+        }else if(pegandoValorId == 2) {
+            avaliacao.innerHTML = `<img onclick="mudarCor(this)" data-id="1" src="assets/imgs/estrelaPreenchida.png">
+        <img onclick="mudarCor(this)" data-id="2" src="assets/imgs/estrelaPreenchida.png" >
+        <img onclick="mudarCor(this)" data-id="3" src="assets/imgs/estrelaEmBranco.png" >
+        <img onclick="mudarCor(this)" data-id="4" src="assets/imgs/estrelaEmBranco.png" >
+        <img onclick="mudarCor(this)" data-id="5" src="assets/imgs/estrelaEmBranco.png" >
+            `
+
+
+        }else if(pegandoValorId == 3) {
+            avaliacao.innerHTML = `<img onclick="mudarCor(this)" data-id="1" src="assets/imgs/estrelaPreenchida.png">
+        <img onclick="mudarCor(this)" data-id="2" src="assets/imgs/estrelaPreenchida.png" >
+        <img onclick="mudarCor(this)" data-id="3" src="assets/imgs/estrelaPreenchida.png" >
+        <img onclick="mudarCor(this)" data-id="4" src="assets/imgs/estrelaEmBranco.png" >
+        <img onclick="mudarCor(this)" data-id="5" src="assets/imgs/estrelaEmBranco.png" >
+            `
+
+        }else if(pegandoValorId == 4) {
+            avaliacao.innerHTML = `<img onclick="mudarCor(this)" data-id="1" src="assets/imgs/estrelaPreenchida.png">
+        <img onclick="mudarCor(this)" data-id="2" src="assets/imgs/estrelaPreenchida.png" >
+        <img onclick="mudarCor(this)" data-id="3" src="assets/imgs/estrelaPreenchida.png" >
+        <img onclick="mudarCor(this)" data-id="4" src="assets/imgs/estrelaPreenchida.png" >
+        <img onclick="mudarCor(this)" data-id="5" src="assets/imgs/estrelaEmBranco.png" >
+            `
+
+        }else if(pegandoValorId == 5) {
+            avaliacao.innerHTML = `<img onclick="mudarCor(this)" data-id="1" src="assets/imgs/estrelaPreenchida.png">
+        <img onclick="mudarCor(this)" data-id="2" src="assets/imgs/estrelaPreenchida.png" >
+        <img onclick="mudarCor(this)" data-id="3" src="assets/imgs/estrelaPreenchida.png" >
+        <img onclick="mudarCor(this)" data-id="4" src="assets/imgs/estrelaPreenchida.png" >
+        <img onclick="mudarCor(this)" data-id="5" src="assets/imgs/estrelaPreenchida.png" >
+            `
+        }
+    }
+
+    function avaliaQuiz() {
+
+    }
+</script>

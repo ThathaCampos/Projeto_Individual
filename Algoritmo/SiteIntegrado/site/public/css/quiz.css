@@ -56,7 +56,6 @@ button:hover {
 #fimQuiz {
     width: 100%;
     display: flex;
-    margin-top: 5%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -72,13 +71,43 @@ button:hover {
     font-family: 'Montserrat', sans-serif;
 }
 
-#mostrarRanking {
+#mostrarRank {
+    font-family: 'Montserrat', sans-serif;
     width: 100%;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
 
 }
 
-#mostrarRanking h1 {
+#mostrarRank h1 {
     display: flex;
     text-align: center;
+}
+
+#mostrarGrafico {
+    width: 40%;
+}
+
+#btn-home{
+    display: flex;
+    width: 100%;
+    justify-content: end;
+}
+
+#btn-home button{
+    background-color: #015097;
+    background-image: none;
+    width: 8%;
+    height: 5%;
+}
+
+/* Estilzar a página de avaliação */
+
+#avaliacao {
+    width: 100%;
+}
+
+#avaliacao img{
+    width: 10%;
 }
