@@ -22,8 +22,15 @@ group by fkUsuario, nomeUsuario order by Quantidade_de_acertos and nomeUsuario l
     return database.executar(instrucao);
 }
 
+
+function mostrarGrafico() {
+    var instrucao = `
+    
+    `
+}
 module.exports = {
     cadastrarAcerto,
     mostrarAcerto,
-    mostrarRanking
+    mostrarRanking,
+    mostrarGrafico
 };

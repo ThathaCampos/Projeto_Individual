@@ -61,8 +61,24 @@ function mostrarRanking(req, res) {
             );
     }
 
+function mostrarGrafico() {
+    
+    questaoCertaModel.mostrarGrafico()
+    .then(
+        function (resultado) {
+            res.status(201).json(resultado);
+        }
+    ).catch(
+        function (erro) {
+            console.log(erro);
+            res.status(500).send("Esse usuário já existe!");
+        }
+    );
+}
+
 module.exports = {
     cadastrarAcerto,
     mostrarAcerto,
-    mostrarRanking
+    mostrarRanking,
+    mostrarGrafico
 }

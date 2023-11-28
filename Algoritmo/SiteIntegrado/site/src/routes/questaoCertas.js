@@ -16,6 +16,10 @@ router.get("/mostrarRanking", function (req, res) {
     questaoCertaController.mostrarRanking(req, res);
 })
 
+router.get("/mostrarGrafico", function(req, res){
+    questaoCertaController.mostrarGrafico(req, res);
+})
+
 // Vai inserir no banco de dados = (post)
 // Vai pegar no banco de dados = (get)
 // Dar um update no banco de dados = (put)

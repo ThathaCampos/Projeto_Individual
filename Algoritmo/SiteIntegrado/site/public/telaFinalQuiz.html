@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>..............</title>
+    <link rel="stylesheet" href="css/quiz.css">
     <link rel="icon" href="./assets/icon/iconTs2.jpg" />
 </head>
 
@@ -17,8 +18,12 @@
     <div id="mostrarRank">
         <h1>Ranking</h1>
         <h3>Posição | Usuário | Pontuação</h3>
+    </div>
+
+    <div id="mostrarGrafico">
 
     </div>
+
 
 </body>
 
@@ -85,4 +90,22 @@
         })
     }
 
+    function mostrarGrafico() {
+        //ele só pega
+        fetch(`/questaoCertas/mostrarGrafico/`, {
+
+            // Vai executar
+        }).then(function (resposta) {
+
+            // Vai retornar um vetor = (resposta)
+            if (resposta.status == 201) {
+                resposta.json().then(res => {
+
+
+
+                })
+            }
+
+        })
+    }
 </script>
