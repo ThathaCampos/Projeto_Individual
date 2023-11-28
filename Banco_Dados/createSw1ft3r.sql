@@ -25,6 +25,8 @@ primary key (idQuestaoCerta, fkUsuario),
 constraint fkQuestaoUsuario foreign key (fkUsuario) references usuario(idUsuario)
 );
 select * from questaoCerta;
+select count(fkUsuario) from questaoCerta where  quantCerta = 13 group by fkUsuario;
+select fkUsuario, count(fkUsuario) from questaoCerta where quantCerta = 7 group by fkUsuario;
 delete from questaoCerta where idQuestaoCerta in (4, 6, 7, 8, 12,13, 14);
 SELECT quantCerta from questaoCerta where fkUsuario = 1 order by idQuestaoCerta desc limit 1;
 
