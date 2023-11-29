@@ -88,6 +88,13 @@ dtAvaliacao timestamp default current_timestamp,
 primary key (idFeedback, fkUsuario),
 constraint fkAvaliaUsuario foreign key (fkUsuario) references usuario (idUsuario)
 );
+select count(quantEstrelas) Igual_1,
+	   (select count(quantEstrelas) from feedback where quantEstrelas = 2) Igual_2,
+       (select count(quantEstrelas) from feedback where quantEstrelas = 3) Igual_3,
+       (select count(quantEstrelas) from feedback where quantEstrelas = 4) Igual_4,
+       (select count(quantEstrelas) from feedback where quantEstrelas = 5) Igual_5
+from feedback
+where quantEstrelas = 1;
 
 select * from feedback;
 
