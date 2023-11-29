@@ -73,7 +73,7 @@ button:hover {
 
 #mostrarRank {
     font-family: 'Montserrat', sans-serif;
-    width: 100%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -85,17 +85,28 @@ button:hover {
     text-align: center;
 }
 
-#mostrarGrafico {
-    width: 40%;
+
+.chart-container {
+    display: flex;
+    position: relative;
+    height: 40vh;
+    width: 40vw;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-left: 55%;
+    margin-top: 8%;
+
 }
 
-#btn-home{
+
+#btn-home {
     display: flex;
     width: 100%;
-    justify-content: end;
+    justify-content: flex-start;
+    margin-left: 2%;
 }
 
-#btn-home button{
+#btn-home button {
     background-color: #015097;
     background-image: none;
     width: 8%;
@@ -108,6 +119,6 @@ button:hover {
     width: 100%;
 }
 
-#avaliacao img{
+#avaliacao img {
     width: 10%;
 }

@@ -9,7 +9,7 @@
     <link rel="icon" href="./assets/icon/iconTs2.jpg" />
 </head>
 
-<body onload="mostrarAcerto(), mostrarRanking(), mostrarGrafico()">
+<body onload="mostrarAcerto(), mostrarRanking(), mostrarGrafico(), mostrarAvaliacao()">
 
     <div id="fimQuiz">
 
@@ -20,9 +20,11 @@
         <h3>Posição | Usuário | Pontuação</h3>
     </div>
 
-    <div id="mostrarGrafico">
+    <div id="mostrarGrafico" class="chart-container">
+        <canvas id="myChart2"></canvas>
         <canvas id="myChart"></canvas>
     </div>
+
 
     <div id="btn-home">
         <button onclick="irParaHome()">Home</button>
@@ -107,12 +109,47 @@
                     const ctx = document.getElementById('myChart');
 
                     new Chart(ctx, {
-                        type: 'bar',
+                        type: 'doughnut',
                         data: {
                             labels: ['0-5', '6-8', '9-13'],
                             datasets: [{
-                                label: '..............',
+                                label: 'Média na Quantidade de Acertos',
                                 data: [resposta[0].Menor_Que_Cinco, resposta[0].Menor_Que_8, resposta[0].Maior_Que_8],
+                                borderWidth: 1
+                            }]
+                        },
+
+                    });
+
+
+
+                })
+            }
+
+        })
+    }
+
+    function mostrarAvaliacao() {
+
+        //ele só pega
+        fetch(`/questaoCertas/mostrarAvaliacao`, {
+
+            // Vai executar
+        }).then(function (resposta) {
+
+            // Vai retornar um vetor = (resposta)
+            if (resposta.status == 201) {
+                resposta.json().then(resposta => {
+
+                    const ctx2 = document.getElementById('myChart2');
+
+                    new Chart(ctx2, {
+                        type: 'bar',
+                        data: {
+                            labels: ['1', '2', '3', '4', '5'],
+                            datasets: [{
+                                label: 'Avaliações dos Usuários',
+                                data: [resposta[0].Igual_1, resposta[0].Igual_2, resposta[0].Igual_3, resposta[0].Igual_4, resposta[0].Igual_5],
                                 borderWidth: 1
                             }]
                         },
@@ -125,7 +162,6 @@
                         }
                     });
 
-
                 })
             }
 
@@ -133,8 +169,8 @@
     }
 
 
-function irParaHome() {
+    function irParaHome() {
 
-    window.location = 'index.html';
-}
+        window.location = 'index.html';
+    }
 </script>

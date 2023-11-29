@@ -94,10 +94,26 @@ function avaliarQuiz(req, res) {
     );
 }
 
+function mostrarAvaliacao(req, res) {
+
+    questaoCertaModel.mostrarAvaliacao()
+    .then(
+        function (resultado) {
+            res.status(201).json(resultado);
+        }
+    ).catch(
+        function (erro) {
+            console.log(erro);
+            res.status(500).send("Esse usuário já existe!");
+        }
+    );
+}
+
 module.exports = {
     cadastrarAcerto,
     mostrarAcerto,
     mostrarRanking,
     mostrarGrafico,
-    avaliarQuiz
+    avaliarQuiz,
+    mostrarAvaliacao
 }

@@ -40,7 +40,21 @@ function mostrarGrafico() {
 function avaliarQuiz(fkUsuario, quantEstrelas) {
 
     var instrucao = `
-    insert into feedback(fkUsuario, quantEstrelas) values (${fkUsuario}, ${quantEstrelas})
+    insert into feedback (fkUsuario, quantEstrelas) values (${fkUsuario}, ${quantEstrelas});
+    `
+    return database.executar(instrucao);
+}
+
+function mostrarAvaliacao() {
+
+    var instrucao = `
+    select count(quantEstrelas) Igual_1,
+	   (select count(quantEstrelas) from feedback where quantEstrelas = 2) Igual_2,
+       (select count(quantEstrelas) from feedback where quantEstrelas = 3) Igual_3,
+       (select count(quantEstrelas) from feedback where quantEstrelas = 4) Igual_4,
+       (select count(quantEstrelas) from feedback where quantEstrelas = 5) Igual_5
+from feedback
+where quantEstrelas = 1;
     `
     return database.executar(instrucao);
 }
@@ -49,5 +63,6 @@ module.exports = {
     mostrarAcerto,
     mostrarRanking,
     mostrarGrafico,
-    avaliarQuiz
+    avaliarQuiz,
+    mostrarAvaliacao
 };
