@@ -9,7 +9,7 @@
     <link rel="icon" href="./assets/icon/iconTs2.jpg" />
 </head>
 
-<body onload="mostrarAcerto(), mostrarRanking(), mostrarGrafico(), mostrarAvaliacao()">
+<body id="body-telaFinal" onload="mostrarAcerto(), mostrarRanking(), mostrarGrafico(), mostrarAvaliacao()">
 
     <div id="fimQuiz">
 
@@ -18,29 +18,27 @@
     <div class="rank">
         <div id="mostrarRank">
             <h1>Ranking</h1>
-            
+
             <div class="pontuacaoUsuario">
                 <div id="posicao">
-                    <h3>Posição</h3> 
+                    <h3>Posição</h3>
                 </div>
-    
+
                 <div id="usuario">
                     <h3>Usuário</h3>
                 </div>
-    
+
                 <div id="pontuacao">
                     <h3>Pontuação</h3>
                 </div>
             </div>
-           
-
+        </div>
+        <div id="mostrarGrafico">
+            <canvas id="myChart2"></canvas>
+            <canvas id="myChart"></canvas>
         </div>
     </div>
 
-    <div id="mostrarGrafico" class="chart-container">
-        <canvas id="myChart2"></canvas>
-        <canvas id="myChart"></canvas>
-    </div>
 
 
     <div id="btn-home">
@@ -69,7 +67,7 @@
                     fimQuiz.innerHTML = ` <h1>Você acertou: ${qtdCerta} de 13 perguntas</h1>
             <div id="mostrarMensagem"></div>`
                 })
-            } 
+            }
             setTimeout(() => {
                 if (qtdCerta <= 5) {
                     frase = `Um mero mortal!`
@@ -81,8 +79,8 @@
                     frase = `Olha só!!! Temos um swifter entre nós!`
                 }
                 mostrarMensagem.innerHTML = `${frase}`
-            }, 1000)
-            
+            }, 500)
+
 
         })
     }
@@ -111,7 +109,7 @@
                         ${res[contador].Quantidade_de_acertos}
                         `
                     }
-                 
+
                 })
             }
 

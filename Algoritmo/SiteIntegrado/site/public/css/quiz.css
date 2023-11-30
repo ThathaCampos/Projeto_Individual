@@ -2,14 +2,14 @@
 /* https://css.glass/ */
 body {
     margin: 0%;
-    /* overflow-y: hidden; */
+    overflow-y: hidden; 
     overflow-x: hidden;
 }
 
 #quiz {
     display: flex;
     width: 100%;
-    height: 620px;
+    height: 720px;
     align-items: center;
     justify-content: center;
     background-image: url(../assets/imgs/img8.jpg);
@@ -54,6 +54,12 @@ button:hover {
 }
 
 /* EStilização dos gráficos */
+#body-telaFinal {
+    height: 720px;
+    background: linear-gradient(90deg, rgba(83,179,221,1) 0%, rgba(255,255,255,0.5) 35%, rgba(227,244,251,0.5) 63%, rgba(83,179,221,1) 100%);
+}
+
+
 #fimQuiz {
     width: 100%;
     display: flex;
@@ -63,7 +69,7 @@ button:hover {
 }
 
 #fimQuiz h1 {
-    font-size: 35px;
+    font-size: 30px;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -74,18 +80,20 @@ button:hover {
 
 .rank {
     width: 100%;
+    height: 500px;
     display: flex;
-    justify-content: center;
+    margin-top: 2%;
+    
 }
 
 #mostrarRank {
     font-family: 'Montserrat', sans-serif;
-    width: 30%;
-    background-color: #769ac6;
+    width: 40%;
+    background-color: #769ac693;
     border: 1px solid black;
+    border-radius: 15px;
     margin-left: 2%;
     display: flex;
-    margin-top: 2%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -94,29 +102,59 @@ button:hover {
 
 #mostrarRank h1 {
     display: flex;
-    text-align: center;
+    font-size: 40px;
+    
 }
 
-
-.chart-container {
+.pontuacaoUsuario {
     display: flex;
-    position: relative;
-    height: 40vh;
-    width: 100vw;
-    flex-direction: row;
-    align-items: center;
-    margin-left: 15%;
-    margin-top: 5%;
-
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
 }
 
+.pontuacaoUsuario #posicao{
+    display: flex;
+    font-size: 18px;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 2%;
+}
+
+.pontuacaoUsuario #usuario{
+    display: flex;
+    font-size: 18px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pontuacaoUsuario #pontuacao{
+    display: flex;
+    font-size: 18px;
+    flex-direction: column;
+    align-items: center;
+     margin-right: 2%;
+}
+
+#mostrarGrafico {
+    display: flex;
+    height: 35vh;
+    width: 80%;
+    padding: 250px 0px;
+    flex-direction: column-reverse;
+    align-items: center;
+
+}
 
 #btn-home {
     display: flex;
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
     width: 100%;
     justify-content: end;
-    margin-left: -2%;
-
+  
+  
 }
 
 #btn-home button {
