@@ -63,13 +63,14 @@ function cadastrar(req, res) {
                 function (resultado) {
                     res.json(resultado);
                 }
+                // retorna o erro do banco = (catch)
             ).catch(
                 function (erro) {
                     console.log(erro);
                     console.log(
-                        "\nHouve um erro ao realizar o cadastro! Erro: ",
                         erro.sqlMessage
                     );
+                    // se o catch estiver funcionando fica com o num 500
                     res.status(500).json(erro.sqlMessage);
                 }
             );

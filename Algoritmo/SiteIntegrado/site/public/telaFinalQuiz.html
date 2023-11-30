@@ -15,9 +15,26 @@
 
     </div>
 
-    <div id="mostrarRank">
-        <h1>Ranking</h1>
-        <h3>Posição | Usuário | Pontuação</h3>
+    <div class="rank">
+        <div id="mostrarRank">
+            <h1>Ranking</h1>
+            
+            <div class="pontuacaoUsuario">
+                <div id="posicao">
+                    <h3>Posição</h3> 
+                </div>
+    
+                <div id="usuario">
+                    <h3>Usuário</h3>
+                </div>
+    
+                <div id="pontuacao">
+                    <h3>Pontuação</h3>
+                </div>
+            </div>
+           
+
+        </div>
     </div>
 
     <div id="mostrarGrafico" class="chart-container">
@@ -84,12 +101,17 @@
 
 
                     for (var contador = 0; contador < res.length; contador++) {
-                        mostrarRank.innerHTML += `
-                        ${contador + 1}º ${res[contador].nomeUsuario} ${res[contador].Quantidade_de_acertos}<br>
+                        posicao.innerHTML += `   
+                        ${contador + 1}º 
                         `
-
+                        usuario.innerHTML += `
+                        ${res[contador].nomeUsuario} 
+                        `
+                        pontuacao.innerHTML += `
+                        ${res[contador].Quantidade_de_acertos}
+                        `
                     }
-
+                 
                 })
             }
 

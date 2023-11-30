@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/quiz.css">
 </head>
 
-<body id="bodyAvaliacao">
+<body id="bodyAvaliacao" onload="verificarAvaliacao()">
 
 
     <div id="avaliacao">
@@ -100,6 +100,7 @@
         <img onclick="mudarCor(this)" data-id="5" src="assets/imgs/estrelaPreenchida.png" >
     </div>
             `
+
         }
     }
 
@@ -125,6 +126,138 @@
 
                 } else {
                     console.log('Erro na avaliação!!!!!')
+                }
+            });
+    }
+
+    function verificarAvaliacao() {
+
+        fetch(`/questaoCertas/verificarAvaliacao/${sessionStorage.getItem('idUsuario')}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+            .then(function (resposta) {
+
+
+                if (resposta.status == 201) {
+                   resposta.json().then((resposta) => {
+                       
+                    if(resposta.length != 0) {
+                        var guardarEstrela = resposta[0].quantEstrelas
+
+                        if (guardarEstrela == 1) {
+             bodyAvaliacao.innerHTML = `<div id="avaliacao">
+        <div class="background-Avaliacao">
+
+            <img data-id="1" src="assets/imgs/estrelaPreenchida.png">
+        <img data-id="2" src="assets/imgs/estrelaEmBranco.png" >
+        <img data-id="3" src="assets/imgs/estrelaEmBranco.png" >
+        <img data-id="4" src="assets/imgs/estrelaEmBranco.png" >
+        <img data-id="5" src="assets/imgs/estrelaEmBranco.png" >
+        </div>
+    </div>
+
+
+
+    <div class="botoes">
+        <button onclick="irParaEstatistica()">Avançar</button>
+    </div>
+
+            `
+
+
+        } else if (guardarEstrela == 2) {
+            bodyAvaliacao.innerHTML = `
+            <div id="avaliacao">
+        <div class="background-Avaliacao">
+
+            <img data-id="1" src="assets/imgs/estrelaPreenchida.png">
+        <img data-id="2" src="assets/imgs/estrelaPreenchida.png" >
+        <img data-id="3" src="assets/imgs/estrelaEmBranco.png" >
+        <img data-id="4" src="assets/imgs/estrelaEmBranco.png" >
+        <img data-id="5" src="assets/imgs/estrelaEmBranco.png" >
+        </div>
+    </div>
+
+
+
+    <div class="botoes">
+        <button onclick="irParaEstatistica()">Avançar</button>
+    </div>
+
+            `
+
+
+        } else if (guardarEstrela == 3) {
+            bodyAvaliacao.innerHTML = ` <div id="avaliacao">
+        <div class="background-Avaliacao">
+
+            <img data-id="1" src="assets/imgs/estrelaPreenchida.png">
+        <img data-id="2" src="assets/imgs/estrelaPreenchida.png" >
+        <img data-id="3" src="assets/imgs/estrelaPreenchida.png" >
+        <img data-id="4" src="assets/imgs/estrelaEmBranco.png" >
+        <img data-id="5" src="assets/imgs/estrelaEmBranco.png" >
+        </div>
+    </div>
+
+
+
+    <div class="botoes">
+        <button onclick="irParaEstatistica()">Avançar</button>
+    </div>
+
+            `
+
+        } else if (guardarEstrela == 4) {
+            bodyAvaliacao.innerHTML = ` <div id="avaliacao">
+        <div class="background-Avaliacao">
+
+            <img data-id="1" src="assets/imgs/estrelaPreenchida.png">
+        <img data-id="2" src="assets/imgs/estrelaPreenchida.png" >
+        <img data-id="3" src="assets/imgs/estrelaPreenchida.png" >
+        <img data-id="4" src="assets/imgs/estrelaPreenchida.png" >
+        <img data-id="5" src="assets/imgs/estrelaEmBranco.png" >
+        </div>
+    </div>
+
+
+
+    <div class="botoes">
+        <button onclick="irParaEstatistica()">Avançar</button>
+    </div>
+
+            `
+
+        } else if (guardarEstrela == 5) {
+            bodyAvaliacao.innerHTML = ` <div id="avaliacao">
+        <div class="background-Avaliacao">
+
+            <img data-id="1" src="assets/imgs/estrelaPreenchida.png">
+        <img data-id="2" src="assets/imgs/estrelaPreenchida.png" >
+        <img data-id="3" src="assets/imgs/estrelaPreenchida.png" >
+        <img data-id="4" src="assets/imgs/estrelaPreenchida.png" >
+        <img data-id="5" src="assets/imgs/estrelaPreenchida.png" >
+        </div>
+    </div>
+
+
+
+    <div class="botoes">
+        <button onclick="irParaEstatistica()">Avançar</button>
+    </div>
+
+
+            `
+               
+        }
+                    }
+                   });
+
+
+                } else {
+                    console.log('Erro na verificarAvaliação!!!!!')
                 }
             });
     }

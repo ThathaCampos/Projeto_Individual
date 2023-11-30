@@ -9,7 +9,7 @@ function cadastrarAcerto(fkUsuario, quantCerta) {
 
 function mostrarAcerto(fkUsuario) {
     var instrucao = `
-    SELECT quantCerta from questaoCerta where fkUsuario = ${fkUsuario} order by idQuestaoCerta desc limit 1;
+        SELECT quantCerta from questaoCerta where fkUsuario = ${fkUsuario} order by idQuestaoCerta desc limit 1;
     `
     return database.executar(instrucao);
 }
@@ -17,11 +17,11 @@ function mostrarAcerto(fkUsuario) {
 function mostrarRanking() {
     var instrucao = `
     select nomeUsuario,
-	   quantCerta as Quantidade_de_acertos
+    quantCerta as 'Quantidade_de_acertos', dtHora
     from questaoCerta
     join usuario on fkUsuario = idUsuario
-    where quantCerta >= 0
-    order by quantCerta and nomeUsuario desc limit 3;
+    where quantCerta >= 0 
+    order by quantCerta desc limit 5;
     `
     return database.executar(instrucao);
 }
@@ -53,8 +53,17 @@ function mostrarAvaliacao() {
        (select count(quantEstrelas) from feedback where quantEstrelas = 3) Igual_3,
        (select count(quantEstrelas) from feedback where quantEstrelas = 4) Igual_4,
        (select count(quantEstrelas) from feedback where quantEstrelas = 5) Igual_5
-from feedback
-where quantEstrelas = 1;
+    from feedback
+    where quantEstrelas = 1;
+    `
+    return database.executar(instrucao);
+}
+
+function verificarAvaliacao(fkUsuario) {
+    var instrucao = `
+
+    select quantEstrelas from feedback where fkUsuario = ${fkUsuario};
+
     `
     return database.executar(instrucao);
 }
@@ -64,5 +73,6 @@ module.exports = {
     mostrarRanking,
     mostrarGrafico,
     avaliarQuiz,
-    mostrarAvaliacao
+    mostrarAvaliacao,
+    verificarAvaliacao
 };

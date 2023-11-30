@@ -27,9 +27,9 @@
 
       <ul>
         <li><a href="index.html">Home</a></li>
-                <li id="cadastro">Cadastro</li>
-                <li> | </li>
-                <li><a href="login.html">Login</a></li>
+        <li id="cadastro">Cadastro</li>
+        <li> | </li>
+        <li><a href="login.html">Login</a></li>
       </ul>
     </div>
   </div>
@@ -92,7 +92,7 @@
   </div>
   </div>
 
- 
+
 </body>
 
 </html>
@@ -120,7 +120,7 @@
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
-      mensagem_erro.innerHTML = "Campos inválidos! Preencha corretamente";
+        mensagem_erro.innerHTML = "Campos inválidos! Preencha corretamente";
 
       finalizarAguardar();
       return false;
@@ -158,17 +158,24 @@
           }, "2000");
 
           limparFormulario();
-          finalizarAguardar();
-        } else {
+          finalizarAguardar(); 
+        
+        } else if(resposta.status == 500) {
+          console.log(`#ERRO: ${resposta}`);
+          cardErro.style.display = "block";
+  
+          mensagem_erro.innerHTML =
+            "Nome de usuario já existe!";
+        } 
+        else {
           throw "Houve um erro ao tentar realizar o cadastro!";
         }
       })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
-      });
 
-    return false;
+      
+
+      return false;
+
   }
 
 

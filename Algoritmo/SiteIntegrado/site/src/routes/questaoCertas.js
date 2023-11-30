@@ -27,6 +27,10 @@ router.post("/avaliarQuiz", function (req, res){
 router.get("/mostrarAvaliacao", function (req, res){
     questaoCertaController.mostrarAvaliacao(req, res);
 })
+
+router.get("/verificarAvaliacao/:fkUsuario", function (req, res){
+    questaoCertaController.verificarAvaliacao(req, res);
+})
 // Vai inserir no banco de dados = (post)
 // Vai pegar no banco de dados = (get)
 // Dar um update no banco de dados = (put)

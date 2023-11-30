@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -18,12 +18,13 @@
         rel="stylesheet"> -->
 </head>
 
-<body>
+<body onload="validarSessao()">
     <!-- navbar -->
-    <div class="navbar">
+    <div class="navbar" id="Navbar">
         <div class="container">
 
             <h1> Sw1ft3r</h1>
+
 
             <ul>
                 <li><a href="#Home">Home</a></li>
@@ -76,7 +77,12 @@
                     <p>
                         A carreira de Taylor Swift é definida por várias "eras" musicais, cada uma refletindo uma
                         evolução em sua sonoridade e imagem. Começando com o country, Swift transitou para o pop-country
-                        antes de uma mudança completa para o pop puro com "1989". A era seguinte, marcada por "Reputation", explorou um som mais sombrio, seguido por uma fase mais romântica e versátil com "Lover". Surpreendendo com dois álbuns consecutivos, "Folklore" e "Evermore", Swift adotou um som indie-folk mais contemplativo. Cada era não só mostrou seu crescimento musical, mas também refletiu sua evolução pessoal e artística. A capacidade de Swift de se reinventar continuamente contribui para sua relevância duradoura na música. </p>
+                        antes de uma mudança completa para o pop puro com "1989". A era seguinte, marcada por
+                        "Reputation", explorou um som mais sombrio, seguido por uma fase mais romântica e versátil com
+                        "Lover". Surpreendendo com dois álbuns consecutivos, "Folklore" e "Evermore", Swift adotou um
+                        som indie-folk mais contemplativo. Cada era não só mostrou seu crescimento musical, mas também
+                        refletiu sua evolução pessoal e artística. A capacidade de Swift de se reinventar continuamente
+                        contribui para sua relevância duradoura na música. </p>
                 </div>
             </div>
             <div class="cards">
@@ -153,30 +159,31 @@
         <div class="corpo-quiz">
             <div class="card-titulo">
                 <div class="texto-quiz">
-                        <div class="titulo">
-                        <p><b style="color: rgb(26, 28, 150); font-size: 35px;">Será que você conhece a Taylor!?</b><br> Este é um
+                    <div class="titulo">
+                        <p><b style="color: rgb(26, 28, 150); font-size: 35px;">Será que você conhece a Taylor!?</b><br>
+                            Este é um
                             ótimo momento para testar seus conhecimentos
                             sobre Taylor.<br>
-                            
+
                             O quiz terá 13 perguntas com 4 opções de resposta, mas só uma é a verdadeira.
                             Ele não informará se a resposta está certa ou não. Você só saberá no final do quiz quantas
                             perguntas acertou.<br>
-                        </div>
                     </div>
-                </div>
-                <div class="container-banner">
-                    <div class="container">
-                        <h2>Are you ready for it?</h2>
-                        <div class="botao">
-                            <button onclick="irParaQuiz()">Quiz</button>
-                        </div>
-                        </p>
-                    </div>
-    
                 </div>
             </div>
+            <div class="container-banner">
+                <div class="container">
+                    <h2>Are you ready for it?</h2>
+                    <div class="botao">
+                        <button onclick="irParaQuiz()">Quiz</button>
+                    </div>
+                    </p>
+                </div>
 
+            </div>
         </div>
+
+    </div>
     </div>
     </div>
 
@@ -198,9 +205,42 @@
 </html>
 <script>
 
-    function irParaQuiz() {
+    var idUsuario = sessionStorage.getItem('idUsuario');
+    function validarSessao() {
+        if (idUsuario) {
+            Navbar.innerHTML = `<div class="container">
 
-        window.location = "quiz.html"
+            <h1> Sw1ft3r</h1>
+
+
+        <ul>
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#Eras">Eras</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+          
+            <li> | </li>
+            <li>Welcome, ${sessionStorage.getItem('nomeUsuario')}!</li>
+            <li><a onclick="finalizarSessao()">Sair</a></li>
+        </ul>
+    </div>`
+        }
+
+    }
+
+    function finalizarSessao() {
+        sessionStorage.removeItem('idUsuario');
+        sessionStorage.removeItem('nomeUsuario');
+        sessionStorage.removeItem('email');
+        sessionStorage.removeItem('senha');
+
+        window.location.reload();
+    }
+
+    function irParaQuiz() {
+        if (!idUsuario) {
+            alert(`Você precisa estar logado para jogar`);
+        } else {
+            window.location = "quiz.html"
+        }
     }
 </script>
-

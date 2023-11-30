@@ -109,11 +109,30 @@ function mostrarAvaliacao(req, res) {
     );
 }
 
+function verificarAvaliacao(req, res) {
+
+    var fkUsuario = req.params.fkUsuario;
+
+    questaoCertaModel.verificarAvaliacao(fkUsuario)
+    .then(
+        function (resultado) {
+            res.status(201).json(resultado);
+        }
+    ).catch(
+        function (erro) {
+            console.log(erro);
+            res.status(500).send("Erro na função verificarAvaliacao!");
+        }
+    );
+}
+
+
 module.exports = {
     cadastrarAcerto,
     mostrarAcerto,
     mostrarRanking,
     mostrarGrafico,
     avaliarQuiz,
-    mostrarAvaliacao
+    mostrarAvaliacao,
+    verificarAvaliacao
 }

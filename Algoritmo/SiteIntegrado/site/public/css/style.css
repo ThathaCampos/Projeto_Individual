@@ -37,17 +37,18 @@ body {
     align-items: center;
 }
 
-.navbar ul :hover {
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
     color: rgba(37, 108, 216, 0.719);
     cursor: pointer;
     text-decoration: underline;
     transform: scale(1.3);
     transition: all 0.3s;
-}
-
-a {
-    color: white;
-    text-decoration: none;
 }
 
 /* .navbar .container ul h1{
