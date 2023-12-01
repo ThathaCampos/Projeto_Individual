@@ -23,7 +23,7 @@
   <div class="navbar">
     <div class="container">
 
-      <h1> Sw1ft3r</h1>
+      <img style="width: 120px;" src="./assets/icon/logo2.png" alt="">
 
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -84,7 +84,7 @@
   </div>
   </div>
   <div id="div_aguardar" class="loading-div">
-    <img src="./assets/imgs/circle-loading.gif" id="loading-gif" />
+    
   </div>
 
   <div id="div_erros_login"></div>
@@ -111,7 +111,7 @@
     var dataVar = dtNasc.value;
 
     if (
-      nomeCompletoVar == "" ||
+      nomeCompletoVar.lenght == "" ||
       nomeVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
@@ -124,7 +124,33 @@
 
       finalizarAguardar();
       return false;
-    } else {
+    } 
+      else if( 
+      emailVar.indexOf('@') == - 1 ||
+      emailVar.indexOf('.com') == - 1
+    
+    ) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        mensagem_erro.innerHTML = "Campo email inválido!";
+
+      
+    }else if( 
+      senhaVar < 8
+    ) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        mensagem_erro.innerHTML = "Campo senha inválido! Minímo 8 caracteres";
+    
+      }else if( 
+       confirmacaoSenhaVar != senhaVar
+    ) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        mensagem_erro.innerHTML = "As senhas não correspondem!";
+    }
+  
+    else {
       setInterval(sumirMensagem, 5000);
     }
 

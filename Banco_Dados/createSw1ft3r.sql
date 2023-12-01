@@ -17,7 +17,6 @@ create table questaoCerta(
 idQuestaoCerta int auto_increment,
 fkUsuario int,
 quantCerta int,
-dtHora timestamp default current_timestamp,
 primary key (idQuestaoCerta, fkUsuario),
 constraint fkQuestaoUsuario foreign key (fkUsuario) references usuario(idUsuario)
 );
@@ -36,11 +35,6 @@ select * from feedback;
 
 
 -- Selects/ Inserts da table usuario
-insert into usuario(nomeCompleto, dtNasc, email, nomeUsuario, senha) values
-('Thamires Campos', '2002-03-29', 'thamires@email.com', 'Thatha', '123456'),
-('Lucas Carvalho', '2004-07-03', 'lucas@email.com', 'Batman', 'batman123'),
-('Bruno Araújo', '2004-08-20', 'bruno@email.com', 'Efacil', 'css123456');
-
 select fkUsuario, nomeUsuario, max(quantCerta) Quantidade_de_acertos from questaoCerta join usuario on fkUsuario = idUsuario 
 group by fkUsuario, nomeUsuario order by Quantidade_de_acertos and nomeUsuario limit 3;
 
@@ -61,12 +55,7 @@ order by Quantidade_de_acertos and nomeUsuario;
 
 
 -- Selects/ Inserts da table questaoCerta
-insert into questaoCerta (fkUsuario, quantCerta) values
-(1, 13),
-(2, 8),
-(3, 5);
 select * from questaoCerta;
-delete from questaoCerta where idQuestaoCerta in (4, 6, 7, 8, 12,13, 14);
 SELECT quantCerta from questaoCerta where fkUsuario = 1 order by idQuestaoCerta desc limit 1;
 select count(quantCerta) Menor_Que_Cinco,
 	   (select count(quantCerta) from questaoCerta where quantCerta > 5 and quantCerta <= 8) Menor_Que_8,
